@@ -21,8 +21,15 @@
 					password : password,
 					staff : role
 				},  function(data,status){
+					console.log(login, password, role);
+					var d = new Date();
+                    var exp = d.setTime(d.getTime() + (60*5));
+
+					console.log(document.cookie = "username= " + " login ; expires = " + exp);
+
+			
 					$("#ajax").html(data);
-					console.log(login, password, (role));
+					
 			});
 			});
 /**				

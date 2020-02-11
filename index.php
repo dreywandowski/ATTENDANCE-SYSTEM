@@ -38,10 +38,7 @@ if (isset($_COOKIE['username']) and isset($_COOKIE['password'])){
 	
 </div>
 
-<!--  login form
-this is to fill in user login details 
-value="<?php echo $_COOKIE['username']?>" 
-value="<?php echo $_COOKIE['pwd']?>"-->
+<p id="result">  </p>
 
 
 <form id="login" action="validate_login.php"  method="POST">
@@ -116,7 +113,7 @@ value="<?php echo $_COOKIE['pwd']?>"-->
 
 
 <script type="text/javascript" src="index.js"></script>
-<script type="text/javascript" src="cookie.js"></script>
+
 </body>
 
 
