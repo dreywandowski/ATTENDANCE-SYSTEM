@@ -1,2 +1,4 @@
 # ATTENDANCE
- A management system for students
+ A management system for students.
+
+Technologies used: Javascript/Jquery, PHP
