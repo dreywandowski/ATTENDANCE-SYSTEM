@@ -1,0 +1,16 @@
+{
+	"person": [
+	{
+       "name": "adura",
+       "age" : 28,
+       "job" : "tech support"
+       }
+	],
+
+	"cities" : [
+	{
+	"name" : "Lagos",
+	"location" : "Nigeria"
+	}
+	]
+}

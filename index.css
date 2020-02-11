@@ -1,0 +1,185 @@
+
+*, h1, h2, h3, h4, h5, h6{
+	font-family: 'Chivo', sans-serif;
+    font-family: 'Cabin Condensed', sans-serif;
+	font-size: 18px;
+}
+
+body{
+			
+			background: url('images/students-1807505_960_720.jpg')  ;
+    background-size: cover;
+    margin: 0;
+    color: white;
+}
+
+
+
+		div{
+		width: 50%;
+	height:3%;
+	margin-top: 3%;
+	margin-left: 27%;	
+		}
+
+
+		.hidden{
+display: none;
+		}
+.shown{
+	display: block;
+}
+		form{
+	width: 80%;
+	height: 23%;
+	padding: .5%;
+	margin-top: 2%;
+	margin-left: 19%;
+	margin-right: 7%;
+	
+}
+input {
+	width: 40%;
+	height: 50px;
+    background-color: ivory;
+    color: black;
+    background-position: 20px 5px;
+    padding-left: 100px;
+    box-sizing: border-box;
+}
+
+input:hover:invalid{
+	border-bottom-color: red;
+}
+input:valid{
+	border-color: black;
+}
+input[type=checkbox]{
+	width: 10%;
+	height: 20px;
+	box-sizing: border-box;
+}
+input[type=radio]{
+	width: 10%;
+	height: 20px;
+	box-sizing: border-box;
+}
+
+.first_name{
+	box-sizing: border-box;
+	 background-image: url("images/user-5.png");
+    background-repeat: no-repeat;
+    background-position: 20px 5px;
+    padding-left: 100px;
+}
+
+.password{
+	box-sizing: border-box;
+	background-image: url("images/padlock.png");
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+	padding-left: 100px;
+}
+
+input[type=email]{
+	box-sizing: border-box;
+	background-image: url("images/envelope.png");
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+	padding-left: 100px;
+}
+input[type=telephone]{
+	box-sizing: border-box;
+	background-image: url("images/phone-call.png");
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+	padding-left: 100px;
+}
+#log{
+background-color: #dc143c;
+border: none;
+color: white;
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: default;
+margin-right: 33px;
+}
+
+#reg{
+background-color: transparent;
+text-decoration: underline;
+border: none;
+color: black;
+padding: 16px 32px;
+margin: 4px 2px;
+cursor: default;
+margin-left: 33px;
+}
+
+button{
+background-color: #4CAF50;
+border: none;
+border-radius: 15px;
+color: white;
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: default;
+}
+
+
+/** RESPONSIVE WEB DESIGN**/
+
+/** tablets styling and mobile styling**/
+
+@media screen and (max-width: 760px){
+*, h1, h2, h3, h4, h5, h6{
+	font-family: 'Chivo', sans-serif;
+    font-family: 'Cabin Condensed', sans-serif;
+	font-size: 14px;
+}
+input {
+	width: 75%;
+    background-color: ivory;
+    color: black;
+    box-sizing: border-box;
+    height: 40px;
+    padding-left: 80px;
+}
+
+	form{
+	width: 80%;
+	height: 23%;
+	padding: .5%;
+	margin-top: 2%;
+	margin-left: 7%;
+	margin-right: 7%;
+	
+}
+.first_name{
+      background-image: url("images/user-5.png");
+      box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: 20px 5px;
+    width : 75%;
+    height: 40px;
+    padding-left: 80px;
+}
+
+.password{
+	box-sizing: border-box;
+	background-image: url("images/padlock.png");
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+	padding-left: 80px;
+	width : 75%;
+    height: 40px;
+}
+
+}
+
+
+
+
+
