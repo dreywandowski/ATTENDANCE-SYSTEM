@@ -49,43 +49,38 @@ hidden();
 
 document.getElementById("log").addEventListener("click", toggle1, false);
 
- /**  SECTION TO VALIDATE LOGIN
-function check_box(){
-var teacher = document.getElementById("teach").checked;
-var student = document.getElementById("stud").checked;
+ 
 
-if (!$('input[name=staff]:checked').length > 0){
-alert("Pls choose an option before proceeding!!");
-}	
+ 
+// check mail and name spelling
+$("#email").blur(function () {
+var mail = $(this).val();
+var q = mail.includes(".");
 
-// else {
-//	location.href("validate_login.php");
-//}}
-
-
-
-document.getElementById("login_user").addEventListener("click", check_box, false);
-*/
-
-//Prevent form submission conditionally
-
-function valuation() {
-	var checkboxs=document.getElementsByName("staff");
-	var okay=false;
-	for(var i=0,l=checkboxs.length;i<l;i++) {
-		if(checkboxs[i].checked) {
-			okay=true;
-			break;
-		}
-	}
-	if (!okay) { 
-		alert("Pls choose an option before proceeding!!");
-		event.preventDefault();
-	} else {
-	}
-
-
+if (q){
 }
+else{
+alert("check your email spelling");
+event.preventDefault();
+}
+
+var fname = $("#fname").val();
+var lname = $("#lname").val();
+var fullName = fname + lname;
+var regex = /\d/g;
+
+if (regex.test(fullName)){
+	alert("Your name cannot have numbers, kindly check and try again");
+	event.preventDefault();
+}
+	else{
+		
+	}
+});
+
+
+
+
 
 
 $("#pwd2").blur(function () {

@@ -1,16 +1,14 @@
 
 *, h1, h2, h3, h4, h5, h6{
-	font-family: 'Chivo', sans-serif;
-    font-family: 'Cabin Condensed', sans-serif;
-	font-size: 18px;
+	  font-size: 22px;
+   	font-family: 'Zilla Slab', serif;
 }
 
 body{
 			
-			background: url('images/students-1807505_960_720.jpg')  ;
+			background: url(images/22918-NU6SNY.jpg);
     background-size: cover;
     margin: 0;
-    color: white;
 }
 
 
@@ -39,7 +37,7 @@ display: none;
 	
 }
 input {
-	width: 40%;
+	width: 30%;
 	height: 50px;
     background-color: ivory;
     color: black;
@@ -129,14 +127,35 @@ cursor: default;
 }
 
 
+
+img {
+  border-radius: 8px;
+}
+
+a:link, a:visited {
+  background-color: green;
+  color: white;
+  padding: 14px 25px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+
+
+
+
 /** RESPONSIVE WEB DESIGN**/
 
 /** tablets styling and mobile styling**/
 
 @media screen and (max-width: 760px){
 *, h1, h2, h3, h4, h5, h6{
-	font-family: 'Chivo', sans-serif;
-    font-family: 'Cabin Condensed', sans-serif;
+	font-family: 'Zilla Slab', serif;
 	font-size: 14px;
 }
 input {
@@ -149,7 +168,7 @@ input {
 }
 
 	form{
-	width: 80%;
+	width: 50%;
 	height: 23%;
 	padding: .5%;
 	margin-top: 2%;
@@ -178,6 +197,8 @@ input {
 }
 
 }
+
+
 
 
 

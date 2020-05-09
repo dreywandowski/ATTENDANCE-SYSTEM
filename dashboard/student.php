@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['first_name']) && !isset($_SESSION['last_name']) && !isset($_SESSION['username']) 
+if (!isset($_SESSION['username']) 
 && !isset($_SESSION['password'])){
 header("Location:error.php");
 }
@@ -9,19 +9,40 @@ header("Location:error.php");
 if ($_SESSION['role'] != 'student'){
 	header("Location:error.php");
 }
+
+// get the timestamp
+date_default_timezone_set("Africa/Lagos");
+$date = new DateTime('now');
+$date_r = $date->format("Y-m-d h:i:s");
+
+$currTime = $date_r;
+
+
 ?>
 <!doctype html>
 <head>
 	<title> Student Dashboard </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/dashboard.css">
+	<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../index.css">
 	<link rel="stylesheet" type="text/css" href="css/uploaded_img.css">
 </head>
+<style type="text/css">
+	body{
+		background-image: url(../images/3749384.jpg);
+		background-size: cover;
+		
+	}
 
+	.close{
+  background-color: #ca3535;
+  border-color: #c43c35;
+  margin-left: 19%;
+  padding: 6px 20px;
+}
+</style>
 <?php
 require_once "connect.php";
-//require_once "../validate_login.php";
 
 
 //saves user login details for session tracking
@@ -30,24 +51,16 @@ $last_name = $_SESSION['last_name'];
 $username = $_SESSION['username'];
 $password = $_SESSION['password'];
 $role = $_SESSION['role'];
-//$img_user = $_SESSION['image'];
 
-//echo "<script>"."console.log($img_user)"."</script>";
-//logs user out after a period of time
-/**setcookie($usr, $first_name, time() + 60*2);
-setcookie($usr, $first_name, time() + 60*2);
-setcookie($usr, $first_name, time() + 60*2);
-setcookie($usr, $first_name, time() + 60*2);
-**/
 ?>
 
 <body>
 	
 
-		<p> Hey <?php echo "$first_name" ." ". "$last_name"?>, welcome!!<br><br>
+		<center><p> Hey <?php echo "$first_name" ." ". "$last_name"?>, welcome!!<br><br>
 		 This is your dashboard. Pls avail yourself as
 		you please. 
-		<!--You have changed your background image to <?echo "$_COOKIE['image']";?>--></p><br>
+	</p><br></center>
 		<button id="logout" class="red button"> Log Out </button>
 		<br>
 		<br>
@@ -66,8 +79,8 @@ if (mysqli_num_rows($pic_query) > 0){
   //echo "<script document.getElementById('pic').innerText = $picture>";
   echo "<img src='$picture' alt='no pic' class='new_img' style='
     height: 200px;
-	width: 200px;
-	border-radius:65px;
+	width: 20%;
+	border-radius:8px;
 	border-style: groove;
 	border-width: medium;
 	border-color: gray;
@@ -80,37 +93,24 @@ else {
 }
 
 
-//}
-
- /** 
-else {
-	 echo "<img src='$img_user' alt='no pic' class='new_img' style='
-    height: 200px;
-	width: 200px;
-	border-radius:65px;
-	border-style: groove;
-	border-width: medium;
-	border-color: gray;
-	clear: both;
-	float: left;'>";
-}
-**/
 ?>
 
 <div id="result"></div>
 	
 
-<button id="picChange" class="green button"> Update profile picture</button>
+<button id="picChange" class="green button"> Update picture</button>
 
 
 
 <div  id="nav">
 	<div id="nav_wrapper">
 	<ul>
-		<li><button id="prompt">Update your profile</button></li>
-		<li><a href="courses/course_dl.php"> Download Open courseware</a></li>
-		<li><a href="../Exam/jamb.php" target="_blank"> Exam Portal</a></li>
-		<li><a href="exams.php">Examination Results</a></li>
+		<li><button id="prompt">Update your profile</button></li><br>
+		<li><a href="courses/course_dl.php"> Download Courses</a></li><br>
+		<li><a href="courses/course_dl.php"> Pay School Fees</a></li><br>
+		<li><a href="../Exam/jamb.php" target="_blank"> Exam Portal</a></li><br>
+		<li><a href="exams.php">Examination Results</a></li><br>
+		<li><a href="courses/courses.php"> Reset Password </a></li><br>
 </ul>
 	</ol>
 </div>
@@ -130,11 +130,10 @@ else {
 	First Name:<input type="text" name="first_name" id="fname" value="<?php echo $first_name ?>"><br/>
 	 Last Name:<input type="text" name="last_name" id="lname" value="<?php echo $last_name ?>"><br>
 	Username:<input type="text" name="username" id="usr" value="<?php echo $username ?>"> <br>
-	Password:<input type="password" name="pwd" id="pwd" value="<?php echo $password ?>"><br>
-	 <button type="submit" id="submit">Update Details</button> <br>
-</form><br>
+	 <button type="submit" id="submit">Update Details</button> 
+</form>
 
-<button id="close" style="display: none"> close this window</button>
+<button id="close" class="close" style="display: none"> close this window</button>
 <p id="ajax"></p>
 
 

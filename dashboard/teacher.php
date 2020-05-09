@@ -15,54 +15,21 @@ if ($_SESSION['role'] != 'teacher'){
 <head>
 	<title> Teacher Dashboard </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../index.css">
 	<link rel="stylesheet" type="text/css" href="css/uploaded_img.css">
 	<style type="text/css">
-		body{
-			background-color: white;
-			color: white;
-			font-family: 'Raleway', sans-serif;
-			font-size: 18px;
-			background: url('images/15_LabKindergartenWEB_bys-1.jpg');
-			background-size:cover;
-		}
-		#nav{
-	width: 1200px;
-	height: 200px;
-	margin-left: 150px;
-	margin-right: 60px;
+	body{
+		background-image: url(../images/26474.jpg);
+		background-size: cover;
+		
+	}
 
-	background-size:cover;
-}
-
-#nav_wrapper{
-	width: 700px;
-	height: 100px ;
-	background-color: indigo;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 50px;
-	
-}
-#nav_wrapper ul li{
-	list-style: none;
-	display: inline;
-	padding: 10px;
-	font-weight: bold;
-}
-#nav_wrapper a{
-	color: white;
-	text-decoration: none;
-	margin-top: 20px;
-	padding: 10px;
-}
-#nav_wrapper a:hover{
-	color: red;
-	transition: 0.4s;
-}
-#update{
-float: left;
-height: 30px;
+	.close{
+  background-color: #ca3535;
+  border-color: #c43c35;
+  margin-left: 19%;
+  padding: 6px 20px;
 }
 	</style>
 </head>
@@ -93,9 +60,9 @@ if (mysqli_num_rows($pic_query) > 0){
   $picture = $row['file_path'];
   //echo "<script document.getElementById('pic').innerText = $picture>";
   echo "<img src='$picture' alt='no pic' class='new_img' style='
-    height: 200px;
-	width: 200px;
-	border-radius:65px;
+   height: 200px;
+	width: 20%;
+	border-radius:8px;
 	border-style: groove;
 	border-width: medium;
 	border-color: gray;
@@ -107,7 +74,7 @@ else {
 	echo "No Pic";
 }
 ?>
-<button id="picChange" class="green button"> Update profile picture</button>
+<button id="picChange" class="green button"> Update picture</button>
 
 		<!--You have changed your background image to <?echo "$_COOKIE['image']";?>--></center></p>
 <p> <center> Dashboard for Lecturers</center></p>
@@ -115,9 +82,10 @@ else {
 <div  id="nav">
 	<div id="nav_wrapper">
 	<ul>
-		<li><button id="prompt">Update your profile</button></li>
-		<li><a href="courses/courses.php"> Upload Lecture Notes </a></li>
-		<li><a href=""> Upload Student Results</a></li>
+		<li><button id="prompt">Update your profile</button></li><br>
+		<li><a href="courses/courses.php"> Upload Lecture Notes </a></li><br>
+		<li><a href=""> Upload Student Results</a></li><br>
+		<li><a href="courses/courses.php"> Reset Password </a></li><br>
 </ul>
 	</ol>
 </div>
@@ -136,11 +104,11 @@ else {
 	First Name:<input type="text" name="first_name" id="fname" value="<?php echo $first_name ?>"><br/>
 	 Last Name:<input type="text" name="last_name" id="lname" value="<?php echo $last_name ?>"><br>
 	Username:<input type="text" name="username" id="usr" value="<?php echo $username ?>"> <br>
-	Password:<input type="password" name="pwd" id="pwd" value="<?php echo $password ?>"><br>
+	
 	 <button type="submit" id="submit">Update Details</button> <br>
 </form><br>
 
-<button id="close" style="display: none"> close this window</button>
+<button id="close" class="close" style="display: none"> close this window</button>
 <p id="ajax"></p>
 
 

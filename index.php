@@ -15,8 +15,8 @@ if (isset($_COOKIE['username']) and isset($_COOKIE['password'])){
 <!doctype html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title> Online Attendance Tracker</title>
-	<link href="https://fonts.googleapis.com/css?family=Cabin+Condensed|Chivo" rel="stylesheet">
+	<title> School Management System</title>
+		<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="index.css">
 
 <script type="text/javascript" src="jquery-3.2.1.js"></script>
@@ -28,8 +28,7 @@ if (isset($_COOKIE['username']) and isset($_COOKIE['password'])){
 
 	<p><center><b> Welcome to the online attendance management system for
 		students and staff<br/><br>
-
-	<u>Please sign up or login accordingly</u> </b></center></p>
+</center></p>
 
 
 	<div>
@@ -48,15 +47,9 @@ if (isset($_COOKIE['username']) and isset($_COOKIE['password'])){
 <label for="Password"><h3> Password</h3></label>
 	<input type="password" id="passd" name="password"  placeholder="password" class="password"  required><br>
 	<span id="ajax"></span>
-	<label>Choose type:</label><br>
-
 	
-	<input type="radio" name="staff"  value="teacher" /> Teacher
-	<input type="radio" name="staff"  value="student"/> Student <br><br>
-
-	<input type="checkbox" name="remember" id="remember" checked>Remember Me<br><br>
      
-
+<br>
 	<br>
 
 	<button type="submit"  name="sub" onclick="valuation()" id="login_user"> Login</button>
@@ -78,7 +71,7 @@ if (isset($_COOKIE['username']) and isset($_COOKIE['password'])){
 		<br>
 		<br>
 	<label> E-mail</label><br>
-		<input type="email" name="email" placeholder="example@mail.com" required>
+		<input type="email" name="email" placeholder="example@gmail.com" required>
 		<br>
 		<br>
 
@@ -98,13 +91,13 @@ if (isset($_COOKIE['username']) and isset($_COOKIE['password'])){
 		<input type="password" id="pwd2" name="password1" minlength="8" required><br>
 		<br>
 
-	<label>Choose type:</label><br>
+	<label>Choose account type:</label><br>
 
 	
 	<input type="radio" id="teacher" name="staff_type"  value="teacher" /> Teacher
 	<input type="radio" id="student" name="staff_type"  value="student"/> Student
 	</div>
-	<br><br><br><br>
+	<br><br>
 
 <input type="checkbox" name="agree" required>I agree to the terms and conditions<br>
 	<button id="submit" name= "all" type="submit"> Sign Up</button>

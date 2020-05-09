@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 
@@ -27,10 +26,21 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 $role = $_POST["staff_type"];
  
+// get the timestamp
+date_default_timezone_set("Africa/Lagos");
+$date = new DateTime('now');
+$date_r = $date->format("Y-m-d h:i:s");
+
+$currTime = $date_r;
+
+
+// secure password b4 storing in database
+$hash = password_hash($password, PASSWORD_DEFAULT);
+
 $_SESSION['first_name'] = $first_name;
 $_SESSION['last_name']  = $last_name;
 $_SESSION['username']  = $username;
-$_SESSION['password']  = $password;
+$_SESSION['password']  = $hash;
 
 $_SESSION['role'] = $role;
 
@@ -41,50 +51,21 @@ $_SESSION['role'] = $role;
 
 
 
-    $sql = "INSERT INTO users (first_name, last_name, username, email, password, role)
-      values ('$first_name', '$last_name', '$username', '$email', '$password', '$role')";
+    $sql = "INSERT INTO users (first_name, last_name, username, email, password, role, reg_time, login_time)
+      values ('$first_name', '$last_name', '$username', '$email', '$hash', '$role', '$currTime', '$currTime')";
 
 if (mysqli_query($link, $sql)){
-    if ($role == "student"){
-    Header("Location:dashboard/student.php");
-    exit();
-  }
-    else if ($role = "teacher"){
-      Header("Location:dashboard/teacher.php");
-        exit();
-    }
+  // send welcome email
+
+ echo "<script>"."alert('Your account has been created successfully. You can now login.')"."</script>";
+ echo "<script>"."window.location = 'index.php'"."</script>";
 }
 
 
 else{
 
-	die("Try again!!".mysqli_error($link));
-}
-/** 
-}
-else if ($staff_type == "student"){
-// dynamically create these values
-
-$sql = "INSERT INTO student (first_name, last_name, username, email, password)
-      values ('$first_name', '$last_name', '$username', '$email', '$password')";
-
-if (mysqli_query($link, $sql)){
-	echo "<script>". "alert('Your account has been created!!')"."</script>";
-    echo "<script>". "document.write('Welcome, $username')"."</script>";
-    
-    Header("Location:dashboard/student.php");
+	die("Error signing you up. Try again.".mysqli_error($link));
 }
 
-
-else{
-
-	die("Try again!!".mysqli_error($link));
-}
-
-
-
-
-}
-*/
 
 }

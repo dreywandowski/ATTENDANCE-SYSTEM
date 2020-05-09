@@ -9,13 +9,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
 $user = $_POST['username'];
-$pwd = $_POST['pwd'];
 
 $name = $_SESSION['username'];
 echo "<script>". "console.log('$name')"."</script>";
 
 $sql = "UPDATE users
-SET first_name = '$first_name', last_name = '$last_name', username = '$user', password = '$pwd'
+SET first_name = '$first_name', last_name = '$last_name', username = '$user'
 WHERE username = '$name'";
 
 $result = mysqli_query($link, $sql);
