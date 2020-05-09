@@ -50,7 +50,16 @@ tr:hover {
 	background-color: #f5f5f5;
 
 }
-
+#link{
+background-color: #4CAF50;
+border: none;
+border-radius: 15px;
+color: white;
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: default;
+}
 	</style>
 	<p> <h3><u>Here is your online library.
 	Containing courses uploaded by lecturers. Avail yourself to them</u></h3></p><br><br>
@@ -67,7 +76,7 @@ $query = "SELECT *
   $success = mysqli_query($link, $query);
 
   echo  "<table id='table' border cellpadding=3>" . "<h4>".
-       "<tr><th width=50>ID</th><th width=100>Course Title</th><th width=100>Teacher</th><th width=150>File Path</th><th width=150>Action</th></tr>".
+       "<tr><th width=50>ID</th><th width=80>Course Title</th><th width=100>Teacher</th><th width=150>Action</th></tr>".
       "&nbsp";
 
  while($row = mysqli_fetch_assoc($success)) {
@@ -75,13 +84,15 @@ $query = "SELECT *
  	echo "<tr><td>".$row["ID"]. "</td>".
       "<td>".$row["Title"]. "</td>".
       "<td>".$row["first_name"]." ".$row["last_name"]."</td>".
-      "<td>".$row["file"]."</td>".
+     
       "<td>"."<button class='dl' type='submit' value='$file'>". "Download"."</button>". "&nbsp";
  
 }
 echo "</tr>" ."</table>";
 	?>
-	
+	<br><br>
+	<a id="link" href="../student.php">Back</a>&nbsp
+
   <script src="jquery-3.2.1.js"></script>	
   <script type="text/javascript">
   	$(document).ready(function() {

@@ -2,15 +2,7 @@
 <?php
  session_start();
  ?>
- <!--
-if (isset($_COOKIE['username']) and isset($_COOKIE['password'])){
-	$user = $_COOKIE['username'];
-	$password = $_COOKIE['password'];
-	echo "<script> document.getElementById('user')value ='$user';
-	document.getElementById('passd')value ='$password'.</script>";
-}
 
-?>-->
 
 <!doctype html>
 <head>
@@ -53,8 +45,10 @@ if (isset($_COOKIE['username']) and isset($_COOKIE['password'])){
 	<br>
 
 	<button type="submit"  name="sub" onclick="valuation()" id="login_user"> Login</button>
-<p> Have no account yet? </p>
-<button id="reg"> Create new account</button><br><br>
+<p> Have no account yet?  
+<button id="reg"> Create new account</button></p>
+
+<a href="forgot_pwd.php"> Forgot Password? </a><br>
 </form>
 
 

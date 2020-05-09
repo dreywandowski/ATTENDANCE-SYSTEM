@@ -49,6 +49,17 @@ p{
 	color: white;
 }
 
+#link{
+background-color: #4CAF50;
+border: none;
+border-radius: 15px;
+color: white;
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: default;
+}
+
 </style>
 <!-- Conditionally display upload form, delete buttons if user is a teacher, 
 	and hide upload form, show download buttons if a student
@@ -98,7 +109,7 @@ $name = $_POST['desc'];
 $file_type = $_FILES['userFile']['type'];
 
 //$file_name = $_FILES['userFile']['desc'];
-echo $file." " . $file_type;
+//echo $file." " . $file_type;
 
 $allowedFormats = array( "application/pdf", "video/mp4");
 
@@ -148,7 +159,9 @@ if ($_FILES['userFile']['error'] = 'UPLOAD_ERR_OK'){
 
 ?>
 
-<span id="ajax"></span>
+<span id="ajax"></span><br><br>
+
+<a id="link" href="../teacher.php">Back</a>&nbsp
 
 
   <script src="jquery-3.2.1.js"></script>	

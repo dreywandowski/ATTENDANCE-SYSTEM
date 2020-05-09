@@ -84,8 +84,8 @@ else {
 	<ul>
 		<li><button id="prompt">Update your profile</button></li><br>
 		<li><a href="courses/courses.php"> Upload Lecture Notes </a></li><br>
-		<li><a href=""> Upload Student Results</a></li><br>
-		<li><a href="courses/courses.php"> Reset Password </a></li><br>
+		
+		<li><a href="../forgot_pwd.php"> Reset Password </a></li><br>
 </ul>
 	</ol>
 </div>
@@ -141,7 +141,7 @@ echo "<script>"."alert('File size exceeds maximum. Acceptable size is 500kb or l
 
 	if (file_exists("images/"."uploads/".$_FILES['userFile']['name'])){
   	$duplicate = $_FILES['userFile']['name'];
-  	echo "<script>"."alert('This picture already exists!!')"."</script>";
+  	//echo "<script>"."alert('This picture already exists!!')"."</script>";
   }
 
   else{

@@ -110,7 +110,7 @@ else {
 		<li><a href="courses/course_dl.php"> Pay School Fees</a></li><br>
 		<li><a href="../Exam/jamb.php" target="_blank"> Exam Portal</a></li><br>
 		<li><a href="exams.php">Examination Results</a></li><br>
-		<li><a href="courses/courses.php"> Reset Password </a></li><br>
+		<li><a href="../forgot_pwd.php"> Reset Password </a></li><br>
 </ul>
 	</ol>
 </div>
@@ -169,7 +169,7 @@ else{
 
 	if (file_exists("images/"."uploads/".$_FILES['userFile']['name'])){
   	$duplicate = $_FILES['userFile']['name'];
-  	echo "<script>"."alert('This picture already exists!!')"."</script>";
+  	//echo "<script>"."alert('This picture already exists!!')"."</script>";
   }
 
   else{
@@ -182,13 +182,7 @@ if ($_FILES['userFile']['error'] = 'UPLOAD_ERR_OK'){
 		SET file_path = '$img'
 		WHERE username = '$username'";
 
-		/**$img = "images/"."uploads/".$_FILES['userFile']['name'];
-		$query = "INSERT INTO images(file_path, user)
-		VALUES('$img', '$username')";
-		/**$query = "UPDATE users
-		SET file_path = '$img'
-		WHERE username = '$username'";**/
-        
+
 
 		$success = mysqli_query($link, $query);
         
