@@ -162,40 +162,34 @@ input {
 	width: 75%;
     background-color: ivory;
     color: black;
-    box-sizing: border-box;
+    
     height: 40px;
     padding-left: 80px;
 }
 
-	form{
-	width: 50%;
-	height: 23%;
-	padding: .5%;
-	margin-top: 2%;
-	margin-left: 7%;
-	margin-right: 7%;
-	
+
+a:link, a:visited {
+  background-color: green;
+  color: white;
+  padding: 10px 15px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
 }
+
+a:hover, a:active {
+  background-color: red;
+}
+
+
 .first_name{
-      background-image: url("images/user-5.png");
-      box-sizing: border-box;
+	box-sizing: border-box;
+	 background-image: url("images/user-5.png");
     background-repeat: no-repeat;
     background-position: 20px 5px;
-    width : 75%;
-    height: 40px;
-    padding-left: 80px;
+    padding-left: 100px;
 }
-
-.password{
-	box-sizing: border-box;
-	background-image: url("images/padlock.png");
-	background-repeat: no-repeat;
-	background-position: 10px 10px;
-	padding-left: 80px;
-	width : 75%;
-    height: 40px;
-}
-
 }
 
 

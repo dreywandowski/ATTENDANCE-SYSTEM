@@ -51,6 +51,7 @@ $last_name = $_SESSION['last_name'];
 $username = $_SESSION['username'];
 $password = $_SESSION['password'];
 $role = $_SESSION['role'];
+$email = $_SESSION['email'];
 
 ?>
 
@@ -79,13 +80,14 @@ if (mysqli_num_rows($pic_query) > 0){
   //echo "<script document.getElementById('pic').innerText = $picture>";
   echo "<img src='$picture' alt='no pic' class='new_img' style='
     height: 200px;
-	width: 20%;
+	width: 22%;
 	border-radius:8px;
 	border-style: groove;
 	border-width: medium;
 	border-color: gray;
 	clear: both;
-	float: left;'>";
+	float: left;
+	'>";
 }
 }
 else {
@@ -107,7 +109,8 @@ else {
 	<ul>
 		<li><button id="prompt">Update your profile</button></li><br>
 		<li><a href="courses/course_dl.php"> Download Courses</a></li><br>
-		<li><a href="courses/course_dl.php"> Pay School Fees</a></li><br>
+		<li><a href="pay_fees.php"> Pay School Fees</a></li><br>
+		<li><a href="view_bills.php"> Payment History</a></li><br>
 		<li><a href="../Exam/jamb.php" target="_blank"> Exam Portal</a></li><br>
 		<li><a href="exams.php">Examination Results</a></li><br>
 		<li><a href="../forgot_pwd.php"> Reset Password </a></li><br>

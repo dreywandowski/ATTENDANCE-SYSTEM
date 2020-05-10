@@ -39,6 +39,7 @@ $_SESSION['last_name'] = $last_name;
 $_SESSION['username'] = $username;
 $_SESSION['password'] = $pwd;
 $_SESSION['role'] = $role;
+$_SESSION['email'] = $email;
 
 
 
