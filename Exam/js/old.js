@@ -1,4 +1,4 @@
-var day   = new Date;
+/**var day   = new Date;
 var min = day.getMinutes() + 5;
 console.log(min,day);
 
@@ -8,3 +8,4 @@ setTimeout(function () {
 
 document.getElementById("timer").innerHTML =  "Countdown Timer " + "<br>" + "<b>" +  " You have " + min + " minutes left" + "</b>";
 
+**/

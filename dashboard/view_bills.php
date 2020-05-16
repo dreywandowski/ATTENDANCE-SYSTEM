@@ -12,6 +12,7 @@
    font-size: 22px;
     font-family: 'Zilla Slab', serif;
     background: url(images/101994-OM0XMB-226.jpg);
+      background-color: coral;
     background-size: cover;
     margin: 0;
 }
@@ -56,27 +57,28 @@ if ($_SESSION['role'] != 'student'){
 }
 
 
-$sql = "SELECT first_name, last_name, date_payed,amount FROM  fees LEFT OUTER JOIN users ON username = 'oluwatest'";
+$sql = "SELECT first_name, last_name, date_payed,amount, payment_ref FROM  fees LEFT OUTER JOIN users ON username = '$username'";
 
 $success = mysqli_query($link, $sql);
 
 
 echo  "<center>"."<table id='table' border cellpadding=3>" . "<h4>".
        "<tr><th width=100>Fullname</th><th width=80>Date</th><th width=80>Amount Paid</th></th>"."<th width=80>Transaction ID</th>".
+
       "&nbsp";
 
 
 
 while($row = mysqli_fetch_assoc($success)) {
-  echo 
+  echo "<tr>".
       "<td>".$row["first_name"]." ".$row["last_name"]."</td>".
       "<td>".$row["date_payed"]."</td>".
       "<td>".$row["amount"]."</td>".
      
-      "<td>".$row["paymeref"]."</td>".
+      "<td>".$row["payment_ref"]."</td>".
     
      
-      "<td>"."<button class='dl' type='submit' value='$file'>". "Download"."</button>". "&nbsp";
+      "&nbsp";
  
 }
 

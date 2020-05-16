@@ -1,33 +1,20 @@
 <?php 
-/**if (!isset($_SESSION)){
-$username = " ";
-$password = " ";
-}
-else{
-	**/
 session_start();
-
 $username = $_SESSION['username'];
 $password = $_SESSION['password'];	
-//}
 
 ?>
 
 <!doctype html>
 
 <head>
+	<title> Exam Portal</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
 	<link rel="stylesheet"  href="css/jamb.css">
 
 	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/> 
-
-	<title>
-
-		CBT TEST
-
-	</title>
 
 </head>
 
@@ -39,18 +26,12 @@ $password = $_SESSION['password'];
 
     ?>
 
-
-	<!-- show the user what the game is all about. This message will
-
-	 dissapear after the user clicks ok-->
 <div id="initial">
 	<p><center>  Welcome to the e-exam portal of the institution.<br>
 	Kindly provide your login details obtained and start on to proceed</center></p>
 </div>
 
 
-<p id="timer"><br>
-</p>
 
 
 <form id="begin" method="POST" action="validate_details.php">

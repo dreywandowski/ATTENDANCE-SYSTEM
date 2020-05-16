@@ -8,19 +8,42 @@ $username = $_SESSION['username'];
 <!doctype html>
 <head>
   <style type="text/css">
-    body{
-      background-color: skyblue;
-    }
+   body{
+   font-size: 22px;
+    font-family: 'Zilla Slab', serif;
+    background: url(images/101994-OM0XMB-226.jpg);
+      background-color: coral;
+    background-size: cover;
+    margin: 0;
+}
+
+   #table{
+      background-color: white;
+        width: 70%;
+         border-collapse: collapse;
+}
+th{
+  background-color:#4CAF50;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 3px solid #ddd;
+}
+  
+tr:hover {
+  background-color: #f5f5f5;
+
+}
   </style>
 	<title> Exam </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	 <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-
+<p><center> Here is a list of your exam scores</center></p>
 
 <?php
-echo "iT WoRks";
 
 
 
@@ -66,6 +89,8 @@ echo "</tr>" ."</table>";
 
 
 	?>
+
+   <a href="student.php">Back</a>&nbsp
 	
   <script src="jquery-3.2.1.js"></script>
 
