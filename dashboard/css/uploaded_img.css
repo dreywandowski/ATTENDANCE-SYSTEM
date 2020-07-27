@@ -1,0 +1,37 @@
+
+.button.green{
+  background-color: #57a957;
+  border-color: #57a957;
+  clear: both;
+  float: left;
+  padding: 6px 20px;
+  margin-top: 10px;
+}
+
+.button.green:hover{
+  background-color: #62c462;
+}
+
+.button.green:active{
+  background: #57a957;
+}
+.button.green, .button.red, .button.blue {
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0,0,0,.2);
+}
+.button.red{
+  background-color: #ca3535;
+  border-color: #c43c35;
+  clear: both;
+  float: right;
+  padding: 6px 20px;
+}
+
+.button.red:hover{
+  background-color: #ee5f5b;
+}
+
+.button.red:active{
+  background: #c43c35;
+}
+

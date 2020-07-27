@@ -1,0 +1,130 @@
+<div class="about">
+      <div class="about-title">
+        <b>ADURAMIMO OLUDARE</b><br>
+        Software Developer
+      </div>
+      <div class="about-body">
+        I am passionate about building and maintaining awesome products that soves every-day problems.<br><br>
+        I also love to continously improve myself to better at my craft daily.<br><br>
+
+        <a href="https://github.com/dreysongz"><b>&gt;</b> View my Projects</a><br>
+        <a href="https://www.linkedin.com/in/aduramimo"><b>&gt;</b> Connect on LinkedIn</a><br>
+        <a href="https:"https://aduramimodrey.sharepoint.com/:b:/s/Adura/EXwWQ87ByfdBjNWui7GgTYYB5vOCXfxcSCImMeUgJiG1WA?e=lTsSP9"><b>&gt;</b> View my Resume</a><br>
+        <a href="https://twitter.com/dreywandowski"><b>&gt;</b> Connect on Twitter</a><br>
+        <a href="mailto:aduramimo@gmail.com"><b>&gt;</b> Send me an Email</a>
+      </div>
+    </div>
+
+
+
+
+<header><h1><strong>Aduramimo Oludare</h1></strong><h3><em>Web/Web App Developer, IT Support and Sage X3 Consultant</h3></em><hr>
+  <img src="IMG_20171213_075349_943.jpg"  alt="dre"/>
+  <ul> 
+    <li>
+    <a href="#about"><h3>ABOUT ME</h3></a>
+   </li>
+    <li>
+    <a><h3>EDUCATION</h3></a>
+      <ul>
+        <li><h4> WASSCE @ Agbado Community High School (2009) </h4></li>
+        <li><h4> Computer Science Degree @ Federal University of Agriculture, Abeokuta (2015) </h4></li>
+      </ul>
+      <li>
+    <a><h3>JOB HISTORY</h3></a>
+      <ul>
+        <li><h4> Junior Staff @ Fusedam (2009-2011)</h4></li>
+        <li><h4> Intern @ Classy Global Computers (August - December 2014)</h4></li>
+        <li><h4> Physics Teacher @ Govt Day Secondary School, Jani, Katsina (2016-2017)</h4></li>
+        <li><h4> Computer Science Teacher @ Olujuwon Schools (May 2017- Jan. 2018)</h4></li>
+         <li><h4>IT Support @ AGL Consulting Limited (Feb. 2018 - July 2019)</h4></li>
+         <li><h4>Technical Support Engineer @ Tek Experts Nigeria (August 2019 - Present)</h4></li>
+      </ul>
+      <li>
+    <a><h3>SPECIALIZATION</h3></a>
+      <ul>
+        <li><h4>Web Design </h4></li>
+        <li><h4> Web Development </h4></li>
+        <li><h4> Sage X3 IT consultant </h4></li>
+      </ul>
+      <li>
+        <a href="#Portfolio"><h3> PAST PROJECTS </h3></a></li>
+      <li>
+        <a><h3> MY CV</h3></a>
+        <ul>
+        <li><a href="ADURAMIMO.pdf"><h4> PDF Format</h4></a></li>
+        <li><a href="ADURAMIMO.docx"><h4> Word Format</h4></a></li>
+        </li>
+      </ul>
+      <li><a href="#contact"> <h3>CONTACT ME</h3></a> </li>
+</ul>
+
+</header>
+
+<div id="about">
+	<h3> Hello, I'm Damilare, an aspiring full-stack developer. I make awesome websites. 
+  I also love spagetti :). My area of expertise covers aspects such as school portals, hotel management systems, e-commerce websites
+	  and so on. Contact me to get your fast and fully responsive web sites.
+    You can also contact me for  SEO services to ensure your site always get visitors.</h3>
+</div>
+
+<br/>
+<br/>
+ <div id="skills">
+    <h2 style="text-align:center"><u>My Skills are:</u></h2>
+  <h4><img class="img-thumbnail" src="html5-topper.png"  alt="HTML"> 
+  <img class="img-thumbnail" src="css_logo1.png"  alt="CSS"> 
+  <img class="img-thumbnail" src="javascript-cup.png"  alt="JScript">  
+  <img class="img-thumbnail" src="bootstrap-logo.png"  alt="bootstrap"> 
+  <img class="img-thumbnail" src="Wordpress_logo_8.png" alt="WP">
+  <img class="img-thumbnail" src="learn_php_on_mac_thumb800.jpg" alt="PHP">
+  <img class="img-thumbnail" src="sage_x3.png" alt="sage">
+  </h4>
+</div>
+
+<br/>
+<br/>
+<p><h1><blockquote><em>
+  "Never forget what you are, for the world will not. Use it as an armour for yourself, and it shall never be used against you"
+</blockquote></em></h1></p><br>
+
+<span id="Portfolio">
+  <h1><center>My Portfolio</h1></center> 
+ <p><a href="hospital/index.php" target="_blank"><img src="webbb.PNG"
+   alt="olu"/>Hospital Management</a> &nbsp&nbsp&nbsp
+    <a href="ATTENDANCE/index.php" target="_blank"><img src="aaaaa.png"
+   alt="olu"/>Attendance Tracker</p></a>
+  
+</span>
+<br/>
+<br/>
+
+<form action="messages.php" method="POST" id="contact">
+  <legend> <h2>How Can I be of Help?</h2></legend>
+    <label for="Name"><h3>Your Name:</h3></label>
+      <input type= "text" name="full name"  placeholder="Full Name" required><br>
+       <label for="E-mail"><h3>E-mail:</h3></label>
+        <input type = "email" name = "email" placeholder = "example@provider.com" required> 
+         <label for="message"><h3>Your message:</h3></label>
+      <textarea name="message" rows="2" cols="15"/></textarea><br/>
+         <button  type="submit" value="Contact Us">Submit</button>
+       
+  </form>
+
+  <footer>
+<h3 style="text-decoration:underline"> Contact Me </h3> 
+  <telephone> 08188542677, 07069255020</h3></telephone><br><br>
+   <a href="http://www.facebook.com/aduramimo.oludare" target="_blank"> 
+	<img src="facebook.png"/></a>  
+<a href="http://www.twitter.com/dreywandowski" target="_blank"> 
+	<img src="twitter.png"/> </a>
+<a href="http://www.instagram.com/dreywandowski" target="_blank">
+ <img src="insta.png"/></a>
+ <a href="https://github.com/dreysongz" target="_blank">
+ <img src="download.png"/></a>
+</footer>
+
+
+</body>
+
+
