@@ -1,7 +1,7 @@
 <?php
 
 
-class Users{
+class Users {
 	private $conn;
 	private $table = "users";
 
