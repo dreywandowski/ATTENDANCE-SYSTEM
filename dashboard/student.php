@@ -23,24 +23,13 @@ $currTime = $date_r;
 <head>
 	<title> Student Dashboard </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="../index.css">
-	<link rel="stylesheet" type="text/css" href="css/uploaded_img.css">
-</head>
-<style type="text/css">
-	body{
-		background-image: url(../images/3749384.jpg);
-		background-size: cover;
-		
-	}
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Noto+Sans+KR&display=swap" rel="stylesheet">
 
-	.close{
-  background-color: #ca3535;
-  border-color: #c43c35;
-  margin-left: 19%;
-  padding: 6px 20px;
-}
-</style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+ <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
 <?php
 require_once "connect.php";
 
@@ -52,58 +41,112 @@ $username = $_SESSION['username'];
 $password = $_SESSION['password'];
 $role = $_SESSION['role'];
 $email = $_SESSION['email'];
-
-?>
-
-<body>
-	
-
-		<center><p> Hey <?php echo "$first_name" ." ". "$last_name"?>, welcome!!<br><br>
-		 This is your dashboard. Pls avail yourself as
-		you please. 
-	</p><br></center>
-		<button id="logout" class="red button"> Log Out </button>
-		<br>
-		<br>
+//$file_path = $_SESSION['file_path'];
 
 
-	
-
-<?php 
 //if (!isset($img_user)){
 $pic = "SELECT file_path FROM users where username = '$username'";
 $pic_query = mysqli_query($link, $pic);
 
 if (mysqli_num_rows($pic_query) > 0){
 	foreach($pic_query as $row) {
-  $picture = $row['file_path'];
-  //echo "<script document.getElementById('pic').innerText = $picture>";
-  echo "<img src='$picture' alt='no pic' class='new_img' style='
-    height: 200px;
-	width: 22%;
-	border-radius:8px;
-	border-style: groove;
-	border-width: medium;
-	border-color: gray;
-	clear: both;
-	float: left;
-	'>";
+  $file_path = $row['file_path'];
+
 }
 }
 else {
-	echo "No Profile Pic";
+$file_path = "images/male-profile-picture.jpg";
 }
+
 
 
 ?>
 
+<body>
+	
+<title>Student Dashboard</title>
+</head>
+<body>
+
+  <div class="mainContainer">
+        <div class="headerContent" id="headerContent">
+            <header>
+                <div class="h2"><h1 class="top">Student Dashboard</h1></div>
+            </header>
+        </div>
+
+        <div class="headerContent-II" id="header-content">
+            <div class="profile-picture-II">
+                <a class="menu-icon"><i class="fas fa-bars" id="myBtn"></i></a>
+            </div>
+            <div class="dashboard">
+            <a href="index.html"><h2 class="">Student Dashboard</h2></a>
+            </div>
+        </div>
+
+        <!-- Menu -->
+        <div id="myMenu" class="menu">
+        <div class="menu-content">
+
+            <div class="left-nav" id="myLinks">
+                <div class="user-summary">
+                    <div class="profile-picture">
+
+                    <img src="<?php echo $file_path ?>" alt="profile pic">
+                </div>
+                <div class="userName">
+                    <p class="mainUserName"><?php echo "$first_name" ." ". "$last_name"?></p> <br>
+                    <p class="userFooter"><h3>Student Username: <?php echo "$username"?></h3></p>
+                </div>
+            </div>
+<form id="picForm" style="display: none;" action="" method="POST" enctype="multipart/form-data">
+		<input type="file" id="actual_img" name="userFile"><br>
+		<!--<input type="text" id="text" name="text">-->
+		<input type="submit" id="picture" value="Upload File">
+	</form>
+
+<br>
+<button id="picChange" class="green"> Update picture</button>
+
+            <hr class="no-display">
+                <div class="quickLinks">
+                    <a href="pay_fees.php">Pay Fees</a>
+                <a href="view_bills.php">Payment History</a>
+                    <hr>
+                    <a href="courses/course_dl.php">My Courses</a>
+               
+                    <hr>
+                    <a href="../Exam/jamb.php">Exam Portal</a>
+               
+                <a href="exams.php">Exam Results</a>
+                    <hr>
+                    <a href="logout.php" id="logout" >Logout</a>
+                                                  
+ </div>
+            </div>
+        </div>
+        </div>
+
+                                    <div class="midContent">
+            <div>
+                <h4>This is the mid content</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu neque vitae magna malesuada porttitor. Mauris maximus dui et rutrum tristique. Nulla facilisi. Ut lacinia nec elit nec viverra. Sed ut ex fermentum, placerat enim non, venenatis turpis. Nullam lectus odio, euismod a auctor id, malesuada euismod arcu. Duis scelerisque interdum velit rutrum mollis. Nullam risus tortor, maximus maximus odio eu, mattis accumsan risus. Donec rutrum, ex ac porta semper, dui eros pretium leo, nec tempus sem odio id urna. Praesent sollicitudin ligula in ante pretium, eu ornare lacus finibus. Etiam purus erat, ultricies id quam id, lacinia tincidunt nisi.
+                </p>
+             </div>
+        </div>
+
+        
+
+	
+
+
+
 <div id="result"></div>
 	
 
-<button id="picChange" class="green button"> Update picture</button>
 
-
-
+<!--
 <div  id="nav">
 	<div id="nav_wrapper">
 	<ul>
@@ -118,13 +161,8 @@ else {
 	</ol>
 </div>
 
-</div>
+</div>-->
 
-<form id="picForm" style="display: none;" action="" method="POST" enctype="multipart/form-data">
-		<input type="file" id="actual_img" name="userFile">
-		<!--<input type="text" id="text" name="text">-->
-		<input type="submit" id="picture" value="Upload File">
-	</form>
 
 
 <form id="update" style="display: none" action="update_details.php" method="POST">

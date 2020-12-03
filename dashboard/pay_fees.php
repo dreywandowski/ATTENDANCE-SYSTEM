@@ -2,51 +2,20 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> Pay Bills </title>
-		<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-	
+    <link rel="stylesheet" href="../css/dashboard-payment.css">
+	<script>
+        function menuFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+        }
+    </script>
 </head>
-<style type="text/css">
-	body{
-		background-image: url(../images/OLAZ6B0.jpg);
-		background-size: cover;
-          font-size: 22px;
-    font-family: 'Zilla Slab', serif;
-	}
-
-a:link, a:visited {
-  background-color: green;
-  color: white;
-  padding: 14px 25px;
-  text-align: center; 
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 8px;
-}
-
-a:hover, a:active {
-  background-color: red;
-}
-input {
-    width: 15%;
-    height: 25px;
-    box-sizing: border-box;
-}
-
-
-
-button{
-background-color: #4CAF50;
-border: none;
-border-radius: 15px;
-color: white;
-padding: 16px 32px;
-text-decoration: none;
-margin: 4px 2px;
-cursor: default;
-}
-
-</style>
 
 <?php
 session_start();
@@ -69,22 +38,43 @@ if ($_SESSION['role'] != 'student'){
 <p style='color:red'> <u>Please note that your appointments will not be honoured if you haven't made a payment.</u></p><br><br>
 
 <span id="ajax"></span><br><br>
+<div class="mainContainer">
+        <div class="mainContain">
+        <div class="headerContent">
+            <div class="profile-picture-1">
+                <img src="../images/male-profile-picture.jpg">
+            </div>
+            <header>
+                <div class="home"><a href="../index.php"><i class="fas fa-home" title="Dashboard home"></i></a></div>
+                <div class="h2"><h2 class="top">School Fees Payment</h2></div>
+                <a href="javascript:void(0);" class="menu-icon" onclick="menuFunction()"><i class="fas fa-bars"></i></a>
+                <div class="logout"><a href="student.php">Student Dashboard</a></div>
+            </header>
+        </div>
 
-<form>
+         <div class="pay">
+<form class="payment" id="lol">
 	<label>Email Address</label><br>
-		<input type="text" name="email" id="email" required><br><br>
+		<input type="text" name="email" id="email" class="inputText" required><br><br>
 
 		<label>Amount</label><br>
-		<input type="number" name="amount" id="amount" required><br><br>
+		<input type="number" name="amount" id="amount" class="inputText" required><br><br>
 
 		<label>Phone number</label><br>
-		<input type="text" name="phone" id="phone" required><br><br>
+		<input type="text" name="phone" id="phone" class="inputText" required><br><br>
     
+    <button type="button" id="pay">Pay Now</button><br><br>
+    <a href="student.php">Back</a>&nbsp
 </form>
 
 
-    <button type="button" id="pay">Pay Now</button><br><br>
-    <a href="student.php">Back</a>&nbsp
+   </div>
+
+        <div class="footerContent">
+            <p>Copyright &COPY; Dreywandowski College, 2020.</p>
+        </div>
+    </div>
+    </div>
 
 <script type="text/javascript" src="jquery-3.2.1.js"></script>
 <script type="text/javascript" src="https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>

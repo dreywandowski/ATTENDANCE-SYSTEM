@@ -1,9 +1,9 @@
 // logs out the user
 
-var form = document.getElementById('update');
+//var form = document.getElementById('update');
 var pic = document.getElementById('picForm');
-var prompt = document.getElementById('prompt');
-var close = document.getElementById("close");
+//var prompt = document.getElementById('prompt');
+//var close = document.getElementById("close");
 var logOut = document.getElementById('logout');
 var picture = document.getElementById("picChange");
 
@@ -19,17 +19,17 @@ function logout() {
 picture.addEventListener('click', function(){
 //alert("ok");
 pic.style.display = 'block';
+picture.style.display = 'none';
 console.log(pic);
 }, false);
 
-// displays update form
+/** displays update form
 prompt.addEventListener('click', show, false);
 function show() {
 	form.style.display = 'block';
    // pic.style.display = 'block';
 	close.style.display = 'inline';
 }
-
 
 // hides the update form
 close.addEventListener("click", hide, false);
@@ -61,7 +61,7 @@ $("#submit").click(function(event){
             	$("#ajax").html(data);
             	console.log(firstName, lastName);
             });
-       });
+       });***/
 /**
 // uploads profile pic asynchronously
 $("#picture").click(function(event){
@@ -73,5 +73,5 @@ $("#picture").click(function(event){
       $("#result").html(data);
       console.log(file_name, data, status);
   })
-})**/           
+})          
 });

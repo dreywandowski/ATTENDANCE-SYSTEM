@@ -21,7 +21,7 @@ $currTime = $date_r;
 
 
 // checks if the user exists in the database
-$query = "SELECT first_name, last_name, username, password, role from users where username = '$login'";
+$query = "SELECT first_name, last_name, username, password, role, email, file_path from users where username = '$login'";
 $success = mysqli_query($link, $query);
 
 if(mysqli_num_rows($success) > 0){
@@ -31,6 +31,8 @@ if(mysqli_num_rows($success) > 0){
   $username = $row['username'];
   $pwd = $row['password'];
   $role = $row['role'];
+  $email = $row['email'];
+  $file_path = $row['file_path'];
 
    }
 
@@ -39,6 +41,7 @@ $_SESSION['last_name'] = $last_name;
 $_SESSION['username'] = $username;
 $_SESSION['password'] = $pwd;
 $_SESSION['role'] = $role;
+$_SESSION['file_path'] = $file_path;
 $_SESSION['email'] = $email;
 
 

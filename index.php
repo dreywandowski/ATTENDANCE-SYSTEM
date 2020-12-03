@@ -1,107 +1,70 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<?php
- session_start();
- ?>
+        <title>SCHOOL APP</title>
 
+         <!--Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap" rel="stylesheet">
+         <link rel="stylesheet" href="css/index.css">
+    </head>
 
-<!doctype html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title> School Management System</title>
-		<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="index.css">
+    <body>
+    
+    <div class="container">
+        <header>
+        <div class="header-logo">
+            <img class="big-img" src="images/drey4.JPG">
+            <img class="small-img" src="images/drey44.jpg">
+        </div>
+            
+       
 
-<script type="text/javascript" src="jquery-3.2.1.js"></script>
-<script type="text/javascript" src="ajax.js"></script>
-</head>
-
-
-<body id="all">
-
-	<p><center><b> Welcome to the online attendance management system for
-		students and staff<br/><br>
-</center></p>
-
-
-	<div>
-		<p> <h3> Please login here</h3>
-	<button id="log"> Login</button>
-	
-</div>
-
-<p id="result">  </p>
-
-
-<form id="login" action="validate_login.php"  method="POST">
-	<label for="User Name"><h3> User Name </h3></label>
-	<input type="text" id="user" name="username"  placeholder="user_name" class="first_name"  required><br><br>
-
-<label for="Password"><h3> Password</h3></label>
-	<input type="password" id="passd" name="password"  placeholder="password" class="password"  required><br>
-	<span id="ajax"></span>
-	
-     
-<br>
-	<br>
-
-	<button type="submit"  name="sub" onclick="valuation()" id="login_user"> Login</button>
-<p> Have no account yet?  
-<button id="reg"> Create new account</button></p>
-
-<a href="forgot_pwd.php"> Forgot Password? </a><br>
-</form>
+        <div class="navigation">
+            <nav class="nav-bar">
+            <ul>
+                <li><a href="/school" class="active">HOME</a></li>
+                <li><a href="#">CURRICULUM</a></li>
+                <li><a href="landing.php">REGISTER</a></li>
+                <li><a href="#">CONTACT US</a></li>
+            </ul>
+            </nav>
+        </div>
+        </header>
 
 
+ 
+        <div class="mainContent">
+            <div class="contentArticle">
+                <article class="firstArticle">
+                    <header><h3>THE SCHOOL APP</h3></header>
+                    <content>
+                       Our app automates the processess involved in school.<br>
+Accept payments, upload course material, take/grade exams, etc.<br>
+Its a full package! Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ Mauris mi dui, ornare nec accumsan eu, viverra vel neque. Nullam congue lorem risus, nec vehicula turpis posuere ac. 
+Aliquam feugiat nulla ut est vehicula pharetra. Praesent ac tincidunt dui, non pulvinar sapien. Quisque fringilla mi nec egestas euismod
+                    </content>
+                </article>
 
+                <img class="hi-mage-1" src="images/5836.jpg">
+                
+                <form name="start" class="start" action="landing.php">
+                    <a href="landing.php"><button type="submit" class="get-started"><span>Get started</span></button></a>
+                </form>
 
-<!--  register form -->
-<form action="redirect.php" enctype="multipart/form-data" method="POST" class="hidden" name="reg" id="register">
-		<div>
-		<h3><u> Sign Up Form</u></h3>
-	</div>
-	<label>Name</label><br>
-		<input type="text" name="first_name" placeholder="first name" class="first_name"  required><br>
-		<input type="text" name="last_name" placeholder="last name" required>
-		<br>
-		<br>
-	<label> E-mail</label><br>
-		<input type="email" name="email" placeholder="example@gmail.com" required>
-		<br>
-		<br>
+            </div>
 
-	<label>Create a username</label><br>
-		<input type="text" name="username" id="username" minlength="5" required>
-		<br>
-		<br>
-<span id="usercheck"></span>
-
-	
-		
-	<label>Create a password</label><br>
-		<input class="password" id="pwd1" type="password" name="password" minlength="8" required>
-		<br>
-		<br>
-	<label> Confirm password</label><br>
-		<input type="password" id="pwd2" name="password1" minlength="8" required><br>
-		<br>
-
-	<label>Choose account type:</label><br>
-
-	
-	<input type="radio" id="teacher" name="staff_type"  value="teacher" /> Teacher
-	<input type="radio" id="student" name="staff_type"  value="student"/> Student
-	</div>
-	<br><br>
-
-<input type="checkbox" name="agree" required>I agree to the terms and conditions<br>
-	<button id="submit" name= "all" type="submit"> Sign Up</button>
-
-</form>
-
-
-<script type="text/javascript" src="index.js"></script>
-
+            <div class="hi-mage">
+                <img class="hi-mage-2" src="images/5836.jpg">
+            </div>
+        </div>
+        <footer class="footer">
+            <p>Copyright &COPY; ADURAMIMO, 2020.</p>
+        </footer>
+    </div>
 </body>
 
+    </html>    
 
-</html>

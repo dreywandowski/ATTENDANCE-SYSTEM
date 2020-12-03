@@ -25,7 +25,8 @@ $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $role = $_POST["staff_type"];
- 
+$file_path = $_POST["file_path"];
+
 // get the timestamp
 date_default_timezone_set("Africa/Lagos");
 $date = new DateTime('now');
@@ -51,14 +52,13 @@ $_SESSION['role'] = $role;
 
 
 
-    $sql = "INSERT INTO users (first_name, last_name, username, email, password, role, reg_time, login_time)
-      values ('$first_name', '$last_name', '$username', '$email', '$hash', '$role', '$currTime', '$currTime')";
+    $sql = "INSERT INTO users (first_name, last_name, username, email, password, role, file_path, reg_time, login_time)
+      values ('$first_name', '$last_name', '$username', '$email', '$hash', '$role', '$file_path', '$currTime', '$currTime')";
 
 if (mysqli_query($link, $sql)){
   // send welcome email
 
- echo "<script>"."alert('Your account has been created successfully. You can now login.')"."</script>";
- echo "<script>"."window.location = 'index.php'"."</script>";
+ echo "<script>"."window.location = 'success.php'"."</script>";
 }
 
 

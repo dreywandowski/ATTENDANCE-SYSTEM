@@ -1,0 +1,4 @@
+POSTMAN TIPS
+
+==> Any request is GET by default
+==> To make a POST request with POSTMAN, go to the "Body" tag, after "Params" and "Authorization", and put in your JSON data
