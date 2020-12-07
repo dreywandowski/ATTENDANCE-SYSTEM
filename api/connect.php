@@ -1,35 +1,39 @@
 <?php
-//connect to mysql server and select the login_details database
+// connection string using OOP
+//$conn = mysqli_connect("localhost","user", "$pass", "db");
 
-
-class Database{
-private $server = "localhost";
-private $user = "root";
-private $password = "";
-private $db = "attendance";	
-public $conn;
-public $table = 'users';
-public $users = array();
+class Connect{
+	protected $localhost ="localhost";
+	protected $user = "root";
+	protected $pass = "";
+	protected $db = "attendance";
+	protected $conn;
 
 
 
-// connect by OOP
-function __construct(){
-	$this->conn =mysqli_connect($this->server, $this->user, $this->password, $this->db);
+// connect to MySQL db using OOP
+	function __construct(){
+		$this->conn = mysqli_connect($this->localhost, $this->user, $this->pass, $this->db);
 
-public function connect(){
-	// close connection
-	$this->conn = null;
-
-	if($this->conn){
-		//echo "connect successful";
-	}
-	else{
-		echo "connection failed";
-	}
+		if($this->conn){
+//echo "<script>"."console.log('connection successfull')"."</script>";
+}
+else{
+echo "<script>"."console.log('connection not successfull')"."</script>";
 }
 
 
+	}
+
+
+// disconnect from db when done
+	function __destruct(){
+
+		mysqli_close($this->conn);
+	}
+}
+
+/**
 // get all users
 public function getUsers(){
 	$read = "SELECT first_name, last_name, username, email, role FROM $this->table";
@@ -110,102 +114,7 @@ if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
 
-// create a new user
-// get posted data
-public function createUser(){
-	$json = file_get_contents("php://input");
 
-$data = json_decode(file_get_contents("php://input"));
-
-if(!$data) {
-
-// set the response code to 404
-			http_response_code(404);
-
-			echo json_encode("Data missing or invalid");
-
-// this is essential, to start the connection after the try-catch have been passed
-	return $this->conn;
-
-  $user_item = array(
-			'username' => $row["username"],
-			'first_name' => $row["first_name"],
-			'last_name' => $row["username"],
-			'email' => $row["email"],
-			'role' => $row["role"]
-		);
-
-		array_push($this->users, $user_item);
-
-		// set response code to 200 - OK
-	http_response_code(200);
-
-	//show users in json format
-	echo "Users: " .json_encode($this->users);
-  }
-} else {
-  // set the response code to 404
-	http_response_code(404);
-
-	echo json_encode("No users found");
-
-
-}
-
-
-else{
-	echo json_encode("It works");
-
-    $hash = password_hash($data->password, PASSWORD_DEFAULT);
-
-   
-   $query = "INSERT INTO $this->table(first_name, last_name, username, email, password, role) VALUES('$data->first_name', '$data->last_name', '$data->username', '$data->email', '$hash', '$data->staff_type')";
-
-
-mysqli_query($this->conn, $query);
-
-	if(mysqli_affected_rows($this->conn) > 0){
-		echo "  Data saved   ";
-	}
-
-$this->conn->close();
-
-
-else{
-	echo "no";
-}
-
-
-
- $user_item = array(
-				'username' =>$data->username,
-				'first_name' =>$data->first_name,
-				'last_name' =>$data->last_name,
-				'email' =>$data->email,
-				'role' =>$data->staff_type,
-				'password' =>$hash
-			);
-
-array_push($this->users, $user_item);
-
-			// set response code to 200 -OK
- 
-			http_response_code(201);
-
-			//show users in json format
-
-			echo json_encode($this->users);
-		}
-/**else{
-			// set the response code to 404
-			http_response_code(404);
-
-			echo json_encode("error creating the user");**/
-		
-
-$this->conn->close(); 
-
-	}
 
 
 // delete a user/resource
@@ -273,5 +182,5 @@ else{
 
 	}
 
-
+**/
 ?>

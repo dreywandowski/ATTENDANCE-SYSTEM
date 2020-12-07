@@ -179,7 +179,8 @@ $file_path = "images/male-profile-picture.jpg";
 
 
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
-<script type="text/javascript" src="js/student.js"></script>
+<script type="text/javascript" src="js/teacher.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
 
 
 </body>
