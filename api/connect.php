@@ -16,10 +16,10 @@ class Connect{
 		$this->conn = mysqli_connect($this->localhost, $this->user, $this->pass, $this->db);
 
 		if($this->conn){
-//echo "<script>"."console.log('connection successfull')"."</script>";
+//echo "connection successfull";
 }
 else{
-echo "<script>"."console.log('connection not successfull')"."</script>";
+//echo "connection not successfull";
 }
 
 

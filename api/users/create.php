@@ -26,7 +26,7 @@ if(!$data) {
 // set the response code to 404
 			http_response_code(404);
 
-			echo json_encode("Data missing or invalid");
+			echo json_encode(array("message" =>"Data missing or invalid"));
 }
 
 
@@ -61,15 +61,13 @@ array_push($user_item);
 
 			//show users in json format
 
-			echo json_encode("User created successfully"." ");
-
-			echo json_encode($user_item);
+			echo json_encode(array("message" => "User created successfully"));
 		}
 else{
 			// set the response code to 404
 			http_response_code(404);
 
-			echo json_encode("error creating the user");
+			echo json_encode(array("message" => "Error creating the user"));
 	}
 
 //$this->conn->close();
