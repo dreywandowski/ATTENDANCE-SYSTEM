@@ -130,7 +130,7 @@
                         <label class="consent"><input type="checkbox" class="remember" name="agree" required>I accept the terms and conditions of use</label>
                     </div>
 
-                    <input type="text" value="app/dashboard/images/male-profile-picture.jpg" name="file_path" hidden>
+                    <input type="text" value="images/uploads/male-profile-picture.jpg" name="file_path" hidden>
                     <p></p>
 
 

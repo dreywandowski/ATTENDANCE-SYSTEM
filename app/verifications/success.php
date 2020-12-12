@@ -5,7 +5,7 @@
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Noto+Sans+KR&family=Rubik&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/regDone.css">
+    <link rel="stylesheet" href="../../public/css/regDone.css">
     <title>Registration Successful</title>
 </head>
 <body>

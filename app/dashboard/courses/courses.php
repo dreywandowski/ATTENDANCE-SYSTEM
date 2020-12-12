@@ -70,7 +70,7 @@ cursor: default;
 <form id="picForm" action=" " method="POST" enctype="multipart/form-data">
 		<input type="file" id="file" name="userFile">
 		File Name:
-		<input type="text" name="desc">
+		<input type="text" name="name">
 		<!--<input type="text" id="text" name="text">-->
 		<input type="submit" id="picture" value="Upload File">
 </form> 
@@ -79,85 +79,9 @@ cursor: default;
 <br><br>
 
 <?php
-require_once "../../config/connect.php";
-//echo "it works";
-$username = $_SESSION['username'];
-
-echo "<p><u> Your uploaded courses. Only PDF and mp4 videos are allowed.</u></p>";
-
-$courses = "SELECT * from courses where user = '$username'";
-
-$result = mysqli_query($link, $courses);
-
- echo  "<table id='table' border cellpadding=3>" . "<h4>".
-       "<tr><th width=50>ID</th><th width=100>Course Title</th><th width=100> File Path</th><th width=150>Action</th></tr>".
-      "&nbsp";
-
-while($row = mysqli_fetch_assoc($result)) {
-	       $file = $row["ID"];
-	  
-	  echo    "<tr><td>". "ID: ".$row["ID"]."&nbsp"."</td>".
-        "<td>". "Title: "."&nbsp" . $row["Title"]. "&nbsp"  ."</td>".
-        "<td>"."File Path:". $row["file"] ."</td>".
-        "<td>"."<button id='delete' value='$file' class='delete'>". "Delete"."</button>"."</td>";
-       
-    }
-echo "</tr>" ."</table>";
-
-if (isset($_FILES['userFile'])){
-	
-$file = $_FILES['userFile']['name'];
-$name = $_POST['desc'];
-$file_type = $_FILES['userFile']['type'];
-
-//$file_name = $_FILES['userFile']['desc'];
-//echo $file." " . $file_type;
-
-$allowedFormats = array( "application/pdf", "video/mp4");
-
-if(!in_array($file_type, $allowedFormats)){
-
-//if (($file_type != "application/pdf")){
-	echo "Pls upload in PDF or mp4 format!!";
-}
+require_once "../../../config/Courses.php";
 
 
-else{
-if (file_exists("courses/".$file)){
-  	$duplicate = $file;
-  	echo "<script>"."alert('This file already exists!!')"."</script>";
-  }
-
-  else{
-  	//if(in_array($file_type, $allowedFormats)){
-	move_uploaded_file($_FILES['userFile']['tmp_name'], "uploads/".$file);
-
-if ($_FILES['userFile']['error'] = 'UPLOAD_ERR_OK'){
-		$query = "INSERT INTO courses(Title, file, user)
-		VALUES ('$name', '$file', '$username')";
-		//WHERE username = '$username'";
-
-		$success = mysqli_query($link, $query);
-        
-        if ($success){
-        	echo "<script> alert('File successfully uploaded')</script>";
-	      // echo "<img class='new_img' src=$img>";
-        }
-      else {
-      	echo "<script alert('Upload failed!!')>";
-      }
-	//echo "<script> alert('Picture changed successfully')</script>";
-	//echo "<img class='new_img' src=$img>"; 
-	}
-	
-	else if ($_FILES['userFile']['error'] = 'UPLOAD_ERR_NO_FILE'){
-		echo "<span style='color:red'>Error uploading file!!</span>";
-	}
-
-//}
-}
-}
-}
 
 ?>
 
