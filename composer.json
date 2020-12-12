@@ -1,0 +1,16 @@
+{
+    "name": "dreywandowski/attendance",
+    "description": "A management system software for students",
+    "authors": [
+        {
+            "name": "dreysongz",
+            "email": "aduramimo@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload" : {
+    	"psr-4" : {
+    		"App\\" : "config"
+    	}
+    }
+}

@@ -11,10 +11,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="public/css/login.css">
 
-<script type="text/javascript" src="jquery-3.2.1.js"></script>
-<script type="text/javascript" src="ajax.js"></script>
+
+
+<script type="text/javascript" src="public/js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="public/js/ajax.js"></script>
 </head>
 
 
@@ -42,7 +44,7 @@
         <div class="mainForm">
             <div class="form">
                 
-                <form name="sign-in" id="login" class="sign-in" action="validate_login.php" method="POST">
+                <form name="sign-in" id="login" class="sign-in" action="" method="POST">
                  
 <h4>Enter your credentials</h4><br>
                     <div class="input-form">
@@ -57,13 +59,13 @@
                     </div>
                    <span id="ajax"></span>
                    
-                    <button class="login"  type="submit"  name="sub" onclick="valuation()">
+                    <button class="login"  type="submit"  name="sub">
                     Login
                 </button><br><br>
- <h3><p class="form-footer">Don't have an account?</p></h3> <button class="login" id="reg"> Register Here</button>
+ <h3><p class="form-footer">Don't have an account?</p></h3> <button class="login"  id="reg"> Register Here</button>
                 </form>
                 <br><br>
-               
+               <a href="app/pwd_reset/forgot_pwd.php"> Forgot Password?</a>
             </div>
         
         </div>
@@ -80,7 +82,7 @@
  <div class="mainForm">
             <div class="form">
                 
-                <form class="register" hidden action="redirect.php" enctype="multipart/form-data" method="POST" class="" name="reg" id="register">
+                <form class="register" hidden action="app/verifications/Register.php" enctype="multipart/form-data" method="POST" class="" name="reg" id="register">
                  
 <h3>Sign up here</h3>
                     <div class="input-form">
@@ -128,7 +130,7 @@
                         <label class="consent"><input type="checkbox" class="remember" name="agree" required>I accept the terms and conditions of use</label>
                     </div>
 
-                    <input type="text" value="images/male-profile-picture.jpg" name="file_path" hidden>
+                    <input type="text" value="app/dashboard/images/male-profile-picture.jpg" name="file_path" hidden>
                     <p></p>
 
 
@@ -144,9 +146,7 @@
 
 
 
-
-
-<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="public/js/index.js"></script>
 
 </body>
 

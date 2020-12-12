@@ -22,7 +22,7 @@ use \Firebase\JWT\JWT;
 Class Update extends Connect {
 
 
-function up(){
+public function up(){
  // get posted data
   $data = json_decode(file_get_contents("php://input"));
 
@@ -44,6 +44,7 @@ $key =  "427708aeb2911e68a03d67ad26d5f85dc8befe97b9";
 
   $jwt = isset($data->jwt)? $data->jwt: " ";
 //echo "This is the jwt from the parent class: ". $jwt;
+
   // if jwt is not empty
   if($jwt){
 
@@ -106,12 +107,30 @@ $success = mysqli_query($this->conn, $query);
 
         
       if ($success){
+        // generate a new jwt immediately after updating user details
+        $token = array(
+      "iat" => "http://localhost/attendance/api/users/updatePic.php",
+      "exp" => $expiration_time,
+      "iss" =>$issuer,
+      "data" => array(
+        "username" =>$username,
+          "file_path" =>$file_name
+      )
+    );
+
+
+
+// generate JWT
+$jwt = JWT::encode($token, $key);
+
 
         // set response code
   http_response_code(200);
-  
+
+  // respond in json format
           echo json_encode(array(
-        "message" => "Picture updated successfully"
+        "message" => "Picture updated successfully",
+        "jwt" => $jwt
        
       )) ;
         }
