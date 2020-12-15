@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once "../../config/connect.php";
-$username = $_SESSION['username'];
+require_once "../../../config/Exams.php";
+
 ?>
 
 
@@ -46,42 +46,9 @@ tr:hover {
 <?php
 
 
-
-$sql = "SELECT ID, first_name, last_name, score, date_taken, file_path
-            FROM  results AS t1
-            LEFT OUTER JOIN users AS t2
-            ON t2.username = t1.username
-            WHERE t1.username ='$username'";
-
-$result = mysqli_query($link, $sql);
-
-echo  "<table id='table' border cellpadding=3>" . "<h4>".
-       "<tr><th width=50>ID</th><th width=100>Full Name</th><th width=100>Score</th><th width=150>Date Taken</th><th width=150>Click Button to Download</th></tr>".
-      "&nbsp";
-
- while($row = mysqli_fetch_assoc($result)) {
- 	 $fullName = $row["first_name"] . "&nbsp" .$row["last_name"];
-    $score = $row["score"];
-    $date = $row["date_taken"];
-    $pic = $row["file_path"];
-    $id = $row["ID"];
-
-$_SESSION['name'] = $fullName;
-$_SESSION['score'] = $score;
-$_SESSION['date'] = $date;
-$_SESSION['pic'] = $pic;
-$_SESSION['id'] = $id;
-
- 	echo "<tr><td>".$row["ID"]. "</td>".
-      "<td>".$row["first_name"]." ".$row["last_name"]."</td>".
-      "<td>".$row["score"]. "</td>".
-      "<td>".$row["date_taken"]."</td>".
-      "<td>"."<input type='button' value='$date' class='dl' type='submit'>";
-
-      
-}
-echo "</tr>" ."</table>";
-
+// check exams
+$check = new Exams();
+$check->checkResult();
 
 	?>
 

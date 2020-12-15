@@ -152,6 +152,33 @@ if ($_FILES['userFile']['error'] = 'UPLOAD_ERR_OK'){
 //}
 }
 }
+
+// student views courses uploaded by teachers
+public function displayCourses(){
+	$query = "SELECT * 
+            FROM  courses
+            LEFT OUTER JOIN users ON user = username";
+
+  //$query = "SELECT * from courses";
+  $success = mysqli_query($this->conn, $query);
+
+  echo  "<table id='table' border cellpadding=3>" . "<h4>".
+       "<tr><th width=50>ID</th><th width=80>Course Title</th><th width=100>Teacher</th><th width=150>Action</th></tr>".
+      "&nbsp";
+
+ while($row = mysqli_fetch_assoc($success)) {
+ 	$file = $row["file"];
+ 	echo "<tr><td>".$row["ID"]. "</td>".
+      "<td>".$row["Title"]. "</td>".
+      "<td>".$row["first_name"]." ".$row["last_name"]."</td>".
+     
+      "<td>"."<button class='dl' type='submit' value='$file'>". "Download"."</button>". "&nbsp";
+ 
+}
+echo "</tr>" ."</table>";
+}
+
+
 }
 
 

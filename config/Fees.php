@@ -63,6 +63,4 @@ echo "<center><input type='button' value='Download Reciept' class='dl' type='sub
 }
 
 
-  $bills = new Fees();   
-  $bills->showBills();
 ?>

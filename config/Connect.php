@@ -21,8 +21,8 @@ class Connect{
 		$this->conn = mysqli_connect($this->localhost, $this->user, $this->pass, $this->db);
 
 		if($this->conn){
-echo "<script>".
-	"console.log('Connected to the database  Ok')"."</script>";
+//echo "<script>".
+	//"console.log('Connected to the database  Ok')"."</script>";
 }
 
 
