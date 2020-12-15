@@ -4,7 +4,7 @@
 	<title> Pay Bills </title>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../../css/dashboard-payment.css">
+    <link rel="stylesheet" href="../../../public/css/dashboard-payment.css">
 	<script>
         function menuFunction() {
         var x = document.getElementById("myLinks");
@@ -19,7 +19,7 @@
 
 <?php
 session_start();
-require_once "../../config/connect.php";
+require_once "../../../config/Fees.php";
 
 if (!isset($_SESSION['username']) 
 && !isset($_SESSION['password'])){
@@ -76,7 +76,7 @@ if ($_SESSION['role'] != 'student'){
     </div>
     </div>
 
-<script type="text/javascript" src="jquery-3.2.1.js"></script>
+<script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
 <script type="text/javascript">
 

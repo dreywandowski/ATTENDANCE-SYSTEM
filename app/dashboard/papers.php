@@ -16,8 +16,8 @@ if ($_SESSION['role'] != 'teacher'){
 	<title> Exam Upload Center </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="../index.css">
-	<link rel="stylesheet" type="text/css" href="css/uploaded_img.css">
+	<link rel="stylesheet" type="text/css" href="../../public/css/index.css">
+
 	<style type="text/css">
 	body{
 		background-color: Dark grey;
@@ -48,7 +48,7 @@ if ($_SESSION['role'] != 'teacher'){
 
 <body>
 	<?php
-require_once "../config/connect.php";
+//require_once "../../config/Courses.php";
 //require_once "../validate_login.php";
 
 $first_name = $_SESSION['first_name'];
@@ -106,9 +106,20 @@ File Name:
     
 </form>
 
+
+<span id="ajax"></span><br><br>
+
+<a id="link" href="../dashboard/teacher.php">Back</a>&nbsp
+
+
+  
+</script>
+
 <?php
-if (isset($_FILES['userFile'])){
-	
+// upload new exam questions
+
+ /** if (isset($_FILES['userFile'])){
+  
 $file = $_FILES['userFile']['name'];
 $name = $_POST['desc'];
 $file_type = $_FILES['userFile']['type'];
@@ -117,80 +128,10 @@ $subject = $_POST['subject'];
 $class = $_POST['class'];
 
 
-//$file_name = $_FILES['userFile']['desc'];
-//echo $file." " . $file_type;
-
-//$allowedFormats = array( "application/pdf", "video/mp4");
-
-//if(!in_array($file_type, $allowedFormats)){
-
-//if (($file_type != "application/pdf")){
-	//echo "Pls upload in PDF or mp4 format!!";
-//}
-
-
-//else{
-if (file_exists("exams/".$file)){
-  	$duplicate = $file;
-  	echo "<script>"."alert('This file already exists!!')"."</script>";
-  }
-
-  else{
-  	//if(in_array($file_type, $allowedFormats)){
-	move_uploaded_file($_FILES['userFile']['tmp_name'], "exams/".$file);
-
-if ($_FILES['userFile']['error'] = 'UPLOAD_ERR_OK'){
-		$query = "INSERT INTO exams(file_path, term, class, subject, description, teacher)
-		VALUES ('$file', '$term', '$class', '$subject', '$name', '$fullName')";
-		//WHERE username = '$username'";
-
-		$success = mysqli_query($link, $query);
-        
-        if ($success){
-        	echo "<script> alert('File successfully uploaded')</script>";
-	      // echo "<img class='new_img' src=$img>";
-        }
-      else {
-      	echo "<script alert('Upload failed!!')>";
-      }
-	//echo "<script> alert('Picture changed successfully')</script>";
-	//echo "<img class='new_img' src=$img>"; 
-	}
-	
-	else if ($_FILES['userFile']['error'] = 'UPLOAD_ERR_NO_FILE'){
-		echo "<span style='color:red'>Error uploading file!!</span>";
-	}
-
-//}
-}
-}
-
-
+$exam = new Courses();
+$exam->uploadExams($file, $name, $term, $file_type, $subject, $class);
+}**/
 ?>
-
-<span id="ajax"></span><br><br>
-
-<a id="link" href="../dashboard/teacher.php">Back</a>&nbsp
-
-
-  <script src="js/jquery-3.2.1.js"></script>	
-  <script type="text/javascript">
-  	$(document).ready(function() {
-  	$('.delete').on('click', function (evt) {
-  		evt.preventDefault();
-  		var file = $(this).val();
-
-  		$.post("delete.php", {
-  			file : file
-            },
-             function(data, status){
-            	$("#ajax").html(data);
-            	console.log(file);
-            });
- 
-});
-});
-</script>
 </body>
 </html>
 

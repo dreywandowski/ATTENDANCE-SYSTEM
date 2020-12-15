@@ -1,4 +1,5 @@
-<?php //echo "it works";
+<?php 
+////echo "it works";
 
 require_once "Connect.php";
 
@@ -32,7 +33,7 @@ while($row = $result->fetch_assoc()) {
 	  echo    "<tr><td>". "ID: ".$row["ID"]."&nbsp"."</td>".
         "<td>". "Title: "."&nbsp" . $row["Title"]. "&nbsp"  ."</td>".
         
-        "<td>"."<button id='delete' value='$file_loc' class='delete'>". "Delete"."</button>"."</td>";
+        "<td>"."<button id='delete' value='$file' class='delete'>". "Delete"."</button>"."</td>";
        
     }
 echo "</tr>" ."</table>";
@@ -48,7 +49,7 @@ $allowedFormats = array( "application/pdf", "video/mp4");
 
 if(!in_array($file_type, $allowedFormats)){
 
-//if (($file_type != "application/pdf")){
+
 	echo "Pls upload in PDF or mp4 format!!";
 }
 
@@ -56,16 +57,79 @@ if(!in_array($file_type, $allowedFormats)){
 else{
 if (file_exists("uploads/".$file_name)){
   	$duplicate = $file_name;
-  	//echo "<script>"."alert('This file already exists!!')"."</script>";
+  
   }
 
   else{
-  	//if(in_array($file_type, $allowedFormats)){
+
 	move_uploaded_file($_FILES['userFile']['tmp_name'], "uploads/".$file_name);
 
 if ($_FILES['userFile']['error'] = 'UPLOAD_ERR_OK'){
 		$query = "INSERT INTO courses(Title, file, user)
 		VALUES ('$name', '$file_name', '$username')";
+		
+
+		$success = mysqli_query($this->conn, $query);
+        
+        if ($success){
+        	echo "<script> alert('File successfully uploaded')</script>";
+	     
+        }
+      else {
+      	echo "<script alert('Upload failed!!')>";
+      }
+	
+	}
+	
+	else if ($_FILES['userFile']['error'] = 'UPLOAD_ERR_NO_FILE'){
+		echo "<span style='color:red'>Error uploading file!!</span>";
+	}
+
+}
+
+}
+
+
+}
+
+
+
+
+// delete courses
+public function deleteCourse($file)
+{
+echo $file;
+$sql = "DELETE FROM courses
+WHERE ID = '$file'";
+
+if (mysqli_query($this->conn, $sql)){
+	echo "Deleted Successfully!!";
+	
+}
+
+else {
+	die("Deletion Error!! ".mysqli_error($this->conn));
+}
+
+}
+
+
+// upload exam questions
+public function uploadExams($file, $name, $term, $subject, $class){
+
+//else{
+if (file_exists("Exam/exams/".$file)){
+  	$duplicate = $file;
+  	
+  }
+
+  else{
+  	//if(in_array($file_type, $allowedFormats)){
+	move_uploaded_file($_FILES['userFile']['tmp_name'], "exams/".$file);
+
+if ($_FILES['userFile']['error'] = 'UPLOAD_ERR_OK'){
+		$query = "INSERT INTO exams(file_path, term, class, subject, description, teacher)
+		VALUES ('$file', '$term', '$class', '$subject', '$name', '$fullName')";
 		//WHERE username = '$username'";
 
 		$success = mysqli_query($this->conn, $query);
@@ -87,35 +151,10 @@ if ($_FILES['userFile']['error'] = 'UPLOAD_ERR_OK'){
 
 //}
 }
-
+}
 }
 
 
-}
-
-
-
-
-// delete courses
-public function deleteCourse($file)
-{
-
-$sql = "DELETE FROM courses
-WHERE ID = '$file'";
-
-if (mysqli_query($this->conn, $sql)){
-	echo "Deleted Successfully!!";
-}
-
-else {
-	die("Deletion Error!! ".mysqli_error($this->conn));
-}
-
-}
-
-
-
-}
 
 
 // display courses uploaded by the user
@@ -134,6 +173,7 @@ if (isset($_FILES['userFile'])){
 $newCourses = new Courses();
 $newCourses->uploadCourses($file_name, $file_type, $file_size, $username, $name);
 }
+
 
 
 

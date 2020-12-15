@@ -1,8 +1,9 @@
 <?php
 session_start();
-require_once "../../config/connect.php";
+require_once "../../../config/Fees.php";
 
-$user = $_SESSION['username'];
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+	$user = $_SESSION['username'];
 $email = $_POST['email'];
 
 // get the timestamp
@@ -17,25 +18,12 @@ $amount = $_POST['amount'];
 $phone = $_POST['phone'];
 $ref = $_POST['ref'];
 
+// pay  bills
+$payBills = new Fees();
+$payBills->handleBills($user, $email, $amount, $phone, $ref, $currTime);
 
 
 
-
-    $sql = "INSERT INTO fees(user, email, amount, phone, payment_ref, date_payed)
-      values ('$user', '$email', '$amount', '$phone', '$ref', '$currTime')";
-
-if (mysqli_query($link, $sql)){
-  // send welcome email
-
- echo 'Payment successfully recorded. Check the transaction history to see your payment';
-}
-
-
-else{
-
-	die("Error in payment.".mysqli_error($link));
-}
-
-
+} 
 
 ?>

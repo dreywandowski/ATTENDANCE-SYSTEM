@@ -66,7 +66,7 @@ cursor: default;
 
 
 	<?php
-  require_once "../../config/connect.php";
+  require_once "../../../config/Courses.php";
 
 $query = "SELECT * 
             FROM  courses

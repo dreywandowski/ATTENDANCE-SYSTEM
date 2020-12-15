@@ -67,7 +67,7 @@ cursor: default;
 
 <body>
 <p><u> UPLOAD LECTURE NOTES HERE</u></p>
-<form id="picForm" action=" " method="POST" enctype="multipart/form-data">
+<form id="picForm" action="" method="POST" enctype="multipart/form-data">
 		<input type="file" id="file" name="userFile">
 		File Name:
 		<input type="text" name="name">
@@ -102,7 +102,7 @@ require_once "../../../config/Courses.php";
             },
              function(data, status){
             	$("#ajax").html(data);
-            	console.log(file);
+            	console.log(data);
             });
  
 });

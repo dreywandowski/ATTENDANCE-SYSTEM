@@ -45,7 +45,7 @@ error_reporting(E_ERROR | E_PARSE);
 
 $username = $_SESSION['username'];
 
-require_once "../../config/connect.php";
+require_once "../../../config/Fees.php";
 
 if (!isset($_SESSION['username']) 
 && !isset($_SESSION['password'])){
@@ -57,35 +57,7 @@ if ($_SESSION['role'] != 'student'){
 }
 
 
-$sql = "SELECT first_name, last_name, date_payed,amount, payment_ref FROM  fees LEFT OUTER JOIN users ON username = '$username'";
 
-$success = mysqli_query($link, $sql);
-
-
-echo  "<center>"."<table id='table' border cellpadding=3>" . "<h4>".
-       "<tr><th width=100>Fullname</th><th width=80>Date</th><th width=80>Amount Paid</th></th>"."<th width=80>Transaction ID</th>".
-
-      "&nbsp";
-
-
-
-while($row = mysqli_fetch_assoc($success)) {
-$refe = $row['payment_ref'];
-  echo "<tr>".
-      "<td>".$row["first_name"]." ".$row["last_name"]."</td>".
-      "<td>".$row["date_payed"]."</td>".
-      "<td>".$row["amount"]."</td>".
-     
-      "<td>".$row["payment_ref"]."</td>".
-    
-      "&nbsp";
- 
-}
-
-echo "</tr>" ."</table>"."</center>";
-
-echo "<center><input type='button' value='Download Reciept' class='dl' type='submit'></center><br>";
-echo "<input type='button' value=$username hidden class='dl' id='rec' type='submit'>";
  ?>
 
 <br>
