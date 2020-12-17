@@ -6,10 +6,11 @@
 </head>
 <style type="text/css">
 	body{
-	background: url(img/28521.jpg);
+	background: url(../../public/images/reset.jpg);
 	background-size: cover;
 	font-family: 'Zilla Slab', serif;
-	font-size: 22px;
+	font-size: 26px;
+  color: azure;
 }
 
 img {
@@ -46,20 +47,19 @@ button{
 <?php
 session_start();
 
-if (!isset($_SESSION['email']) && !isset($_SESSION['username']) && !isset($_SESSION['token'])){
+if (!isset($_SESSION['email']) && !isset($_SESSION['username']) && !isset($_GET['token'])){
 header("Location:dashboard/error.php");
 }
 
-//session_destroy();	
 
 $email = $_SESSION['email'];
 $username = $_SESSION['username'];
-$token = $_SESSION['token'];
-
+$token = $_GET['token'];
+echo $token;
 ?>
 
-
-<p> Enter the new password for the email associated with your account:
+<center>
+<p> Enter the new password for the email associated with your account:</p>
 
 <form action="pwd_sucess.php" method="POST" >
 	<input type="text" hidden name="token" value="<?php echo $token ?>" readonly>
@@ -68,4 +68,4 @@ $token = $_SESSION['token'];
 
 	
 <button type="submit"> Change Password</button>
-</form>
+</form></center>
