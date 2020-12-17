@@ -55,7 +55,7 @@ header("Location:dashboard/error.php");
 $email = $_SESSION['email'];
 $username = $_SESSION['username'];
 $token = $_GET['token'];
-echo $token;
+//echo $token;
 ?>
 
 <center>
