@@ -1,5 +1,7 @@
 <?php
  session_start();
+
+
  ?>
 
 
@@ -58,7 +60,9 @@
                
                     </div>
                    <span id="ajax"></span>
-                   
+                  
+                   <input type="checkbox" name="rem" value="Remember Me"> Remember Me<br><br>
+
                     <button class="login"  type="submit"  name="sub">
                     Login
                 </button><br><br>

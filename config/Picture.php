@@ -1,4 +1,6 @@
 <?php
+//namespace App;
+
 require_once "Connect.php";
 
 Class Picture extends Connect{

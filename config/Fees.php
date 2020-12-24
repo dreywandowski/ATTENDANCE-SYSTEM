@@ -1,5 +1,5 @@
 <?php
-
+//namespace App;
 require_once "Connect.php";
 
 
@@ -26,7 +26,7 @@ else{
 
 
 // show payment history
-public function showBills(){
+public function showBills($username){
 
 	$sql = "SELECT first_name, last_name, date_payed,amount, payment_ref FROM  fees LEFT OUTER JOIN users ON username = '$username'";
 
@@ -41,7 +41,7 @@ echo  "<center>"."<table id='table' border cellpadding=3>" . "<h4>".
 
 
 while($row = mysqli_fetch_assoc($success)) {
-$refe = $row["first_name"]." ".$row["last_name"]; echo $refe;
+$refe = $row["first_name"]." ".$row["last_name"]; //echo $refe;
   echo "<tr>".
       "<td>".$row["first_name"]." ".$row["last_name"]."</td>".
       "<td>".$row["date_payed"]."</td>".
@@ -56,7 +56,7 @@ $refe = $row["first_name"]." ".$row["last_name"]; echo $refe;
 echo "</tr>" ."</table>"."</center>";
 
 echo "<center><input type='button' value='Download Reciept' class='dl' type='submit'></center><br>";
-//echo "<input type='button' value=$username hidden class='dl' id='rec' type='submit'>";
+echo "<input type='button' value=$username hidden class='dl' id='rec' type='submit'>";
 }
 
 

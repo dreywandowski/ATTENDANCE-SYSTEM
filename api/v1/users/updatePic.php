@@ -23,6 +23,7 @@ Class Update extends Connect {
 
 
 public function up(){
+  
  // get posted data
   $data = json_decode(file_get_contents("php://input"));
 
@@ -34,7 +35,7 @@ $expiration_time = $issued_at + (60 * 60);  // 10 minutes
 $key =  "427708aeb2911e68a03d67ad26d5f85dc8befe97b9";
 
 // picture properties
- $file_name = $data->name;
+  $file_name = $data->name;
   $file_type = $data->type;
   $file_size = $data->size;
   //$username = $_SESSION['username'];
@@ -77,7 +78,7 @@ $username = $details['username'];
   
 
       echo json_encode(array(
-        "message" => "Please use a valid image file"
+        "message" => "Please use a valid image file, like a pdf or an mp4 file"
        
       )) ;
   }

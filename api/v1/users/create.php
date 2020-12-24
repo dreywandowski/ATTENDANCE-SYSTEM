@@ -19,9 +19,9 @@ class Register extends Connect{
 public function createUser(){
 	$json = file_get_contents("php://input");
 
-$data = json_decode(file_get_contents("php://input"));
+    $data = json_decode(file_get_contents("php://input"));
 
-if(!$data) {
+if (!$data) {
 
 // set the response code to 404
 			http_response_code(404);

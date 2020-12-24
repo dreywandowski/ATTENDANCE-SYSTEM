@@ -22,7 +22,7 @@ Class View extends Connect{
 public function bills(){
 
 	$check = $users->read(); // a standard method for SELECT
-$num = $check->rowCount();
+    $num = $check->rowCount();
 
 
 // if records are found

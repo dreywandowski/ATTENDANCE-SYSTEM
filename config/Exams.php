@@ -1,5 +1,5 @@
 <?php 
-////echo "it works";
+//namespace App;
 
 require_once "Connect.php";
 

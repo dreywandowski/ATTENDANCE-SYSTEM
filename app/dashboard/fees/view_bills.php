@@ -3,7 +3,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> Transaction History </title>
 		<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
-	
+	 
 	
 </head>
 
@@ -58,7 +58,7 @@ if ($_SESSION['role'] != 'student'){
 
 
   $bills = new Fees();   
-  $bills->showBills();
+  $bills->showBills($username);
 
  ?>
 

@@ -57,7 +57,7 @@ button{
 	 <button type="submit" id="change">Send the code to me</button><br><br>
 
 </form><br><br>
-<a href="index.php">Back</a>&nbsp
+<a href="../../index.php">Back</a>&nbsp
 </center>
 
 	 

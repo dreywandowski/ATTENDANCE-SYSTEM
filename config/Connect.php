@@ -17,34 +17,26 @@ class Connect{
 
 
 // connect to MySQL db using OOP
-	function __construct(){
+	public function __construct(){
 		$this->conn = mysqli_connect($this->localhost, $this->user, $this->pass, $this->db);
 
 		if($this->conn){
-//echo "<script>".
-	//"console.log('Connected to the database  Ok')"."</script>";
+return true;
 }
 
 
 else{
-echo "<script>"."console.log('connection not successfull')"."</script>";
+	return false;
+//echo "<script>"."console.log('connection not successfull')"."</script>";
 }
 
 
 	}
 
-	//filter user input
-	protected function checkInput($var){
-		$var = htmlspecialchars($var);
-		$var = trim($var);
-		$var = stripslashes($var);
-
-		return $var;
-	}
 
 
 // disconnect from db when done
-	function __destruct(){
+	public function __destruct(){
 
 		mysqli_close($this->conn);
 	}

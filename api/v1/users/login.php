@@ -91,7 +91,7 @@ else{
 	// set the response code to 404
 			http_response_code(404);
 
-			echo json_encode(array("message" => "Login failed"));
+			echo json_encode(array("message" => "Login failed. Check your username and/or password"));
 }
 
 }

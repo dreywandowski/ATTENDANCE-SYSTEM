@@ -1,11 +1,14 @@
 <?php 
-////echo "it works";
+//namespace App;
+
 
 require_once "Connect.php";
 
+//use App\Connect;
+
 Class Courses extends Connect{
 
-public $file_path;
+protected $file_path;
 
 
 // show courses
