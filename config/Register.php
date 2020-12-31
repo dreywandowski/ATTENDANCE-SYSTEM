@@ -2,7 +2,7 @@
 session_start();
 
 
-require_once "../../config/connect.php";
+require_once "Connect.php";
 
 
 Class Register extends Connect{

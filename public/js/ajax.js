@@ -10,14 +10,24 @@ $(document).ready(function () {
 			
 		var username = $("#user").val();
 		var password = $("#passd").val();
+        var remember = $("#check:checked").val();
+        var rem;
+
+        if (typeof remember === 'undefined'){
+        rem = "noCheck";
+        }
+
+        else{
+        	rem = "check";
+        }
 
 
-		$.post("../ATTENDANCE/app/verifications/Login.php", {
+		$.post("../ATTENDANCE/config/Login.php", {
 			username: username,
 			password: password,
-
+            rem: rem, 
 		}, function (data, status) {
-			console.log(username, password);
+			console.log(username, password, rem);
 			var d = new Date();
 			var exp = d.setTime(d.getTime() + (60 * 5));
 

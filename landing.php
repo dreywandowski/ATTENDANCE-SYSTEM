@@ -1,8 +1,7 @@
 <?php
- session_start();
-
 
  ?>
+
 
 
 <!doctype html>
@@ -48,20 +47,20 @@
                 
                 <form name="sign-in" id="login" class="sign-in" action="" method="POST">
                  
-<h4>Enter your credentials</h4><br>
+<h4>Enter your username and password</h4><br>
                     <div class="input-form">
-                        <i class="fa fa-user icon"></i><input type="text" id="user"  name="username" required autocomplete="username" autofocus class="e-mail" placeholder="Enter Username">
+                        <i class="fa fa-user icon"></i><input type="text" id="user" placeholder="Enter Username"  name="username" required autocomplete="username" autofocus class="e-mail" value = "<?php if(isset($_COOKIE['user'])){echo $_COOKIE['user'];} else  {echo '';}  ?> ">
                       
                     </div>
 
                     <div class="input-form">
-                        <i class="fa fa-key icon"></i><input type="password" id="passd" class="login-pwd" placeholder="Enter Password"  name="password" required autocomplete="current-password">   
+                        <i class="fa fa-key icon"></i><input type="password" id="passd" class="login-pwd" placeholder="Enter Password"  name="password" required autocomplete="current-password" value = "<?php if(isset($_COOKIE['password'])){echo $_COOKIE['password'];} else  {echo '';}  ?>" >   
 
                
                     </div>
                    <span id="ajax"></span>
                   
-                   <input type="checkbox" name="rem" value="Remember Me"> Remember Me<br><br>
+                   <input type="checkbox" name="rem" checked id="check" value="check"> Remember Me<br><br>
 
                     <button class="login"  type="submit"  name="sub">
                     Login
