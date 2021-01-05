@@ -27,7 +27,7 @@ return true;
 
 else{
 	return false;
-//echo "<script>"."console.log('connection not successfull')"."</script>";
+//echo "<script>"."console.log('connection not successful')"."</script>";
 }
 
 
@@ -44,4 +44,3 @@ else{
 
 
 
-?>

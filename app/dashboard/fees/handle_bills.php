@@ -20,10 +20,9 @@ $ref = $_POST['ref'];
 
 // pay  bills
 $payBills = new Fees();
-$payBills->handleBills($user, $email, $amount, $phone, $ref, $currTime);
+$payBills->handle($user, $email, $amount, $phone, $ref, $currTime);
 
 
 
 } 
 
-?>

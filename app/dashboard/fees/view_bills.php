@@ -58,7 +58,7 @@ if ($_SESSION['role'] != 'student'){
 
 
   $bills = new Fees();   
-  $bills->showBills($username);
+  $bills->show($username);
 
  ?>
 

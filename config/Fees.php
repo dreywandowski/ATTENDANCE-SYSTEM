@@ -5,7 +5,7 @@ require_once "Connect.php";
 
 Class Fees extends Connect {
 
-public function handleBills($user, $email, $amount, $phone, $ref, $currTime){
+private function handleBills($user, $email, $amount, $phone, $ref, $currTime){
 
 $sql = "INSERT INTO fees(user, email, amount, phone, payment_ref, date_payed)
       values ('$user', '$email', '$amount', '$phone', '$ref', '$currTime')";
@@ -24,9 +24,14 @@ else{
 
 }
 
+// handle bills safely
+    public function handle($user, $email, $amount, $phone, $ref, $currTime){
+        return $this->handleBills($user, $email, $amount, $phone, $ref, $currTime);
+    }
+
 
 // show payment history
-public function showBills($username){
+private function showBills($username){
 
 	$sql = "SELECT first_name, last_name, date_payed,amount, payment_ref FROM  fees LEFT OUTER JOIN users ON username = '$username'";
 
@@ -59,8 +64,10 @@ echo "<center><input type='button' value='Download Reciept' class='dl' type='sub
 echo "<input type='button' value=$username hidden class='dl' id='rec' type='submit'>";
 }
 
-
+// display fees safely
+public function show($username){
+    return $this->showBills($username);
+}
 }
 
 
-?>

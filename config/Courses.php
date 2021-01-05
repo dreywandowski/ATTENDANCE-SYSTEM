@@ -97,7 +97,6 @@ if ($_FILES['userFile']['error'] = 'UPLOAD_ERR_OK'){
 
 
 
-
 // delete courses
 public function deleteCourse($file)
 {
