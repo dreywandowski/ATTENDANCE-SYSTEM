@@ -85,7 +85,7 @@ if ($_FILES['userFile']['error'] = 'UPLOAD_ERR_OK'){
 	}
 	
 	else if ($_FILES['userFile']['error'] = 'UPLOAD_ERR_NO_FILE'){
-		echo "<span style='color:red'>Error uploading file!!</span>";
+		echo "<span style='color:#ff0000'>Error uploading file!!</span>";
 	}
 
 }

@@ -56,7 +56,7 @@ protected function insertDB($first_name, $last_name, $email, $username, $pwd, $f
 
 	if(mysqli_affected_rows($this->conn) > 0){
 	
- echo "<script>"."window.location = 'success.php'"."</script>";
+ echo "<script>"."window.location = '../app/verifications/success.php'"."</script>";
 		return true;
 	}
 
@@ -78,7 +78,7 @@ $html = array(
 'first_name' => htmlentities($_POST['first_name'], ENT_QUOTES, 'UTF-8'),
 'last_name' => htmlentities($_POST['last_name'], ENT_QUOTES, 'UTF-8'),
 'email' => htmlentities($_POST['email'], ENT_QUOTES, 'UTF-8'),
-'role' => htmlentities($_POST['staff_type'], ENT_QUOTES, 'UTF-8'),
+//'role' => htmlentities($_POST['staff_type'], ENT_QUOTES, 'UTF-8'),
 'file_path' => htmlentities($_POST['file_path'], ENT_QUOTES, 'UTF-8'),
 );
 
@@ -89,7 +89,7 @@ $last_name = $html['last_name'];
 $username = $html['username'];
 $email = $html['email'];
 $password = $html['password'];
-$role = $html["staff_type"];
+$role = $_POST['staff_type'];
 $file_path = $html["file_path"];
 
 

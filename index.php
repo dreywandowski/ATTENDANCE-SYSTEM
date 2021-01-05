@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
+//require_once __DIR__ . '/vendor/autoload.php';
  ?>
  <!DOCTYPE html>
     <head>
@@ -43,9 +43,9 @@ require_once __DIR__ . '/vendor/autoload.php';
                 <article class="firstArticle">
                     <header><h3>THE SCHOOL APP</h3></header>
                     <content>
-                       Our app automates the processess involved in school.<br>
+                       Our app automates the processes involved in school.<br>
 Accept payments, upload course material, take/grade exams, etc.<br>
-Its a full package! Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Its a full package! Check it out and make use of it.
  Mauris mi dui, ornare nec accumsan eu, viverra vel neque. Nullam congue lorem risus, nec vehicula turpis posuere ac. 
 Aliquam feugiat nulla ut est vehicula pharetra. Praesent ac tincidunt dui, non pulvinar sapien. Quisque fringilla mi nec egestas euismod
                     </content>

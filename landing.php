@@ -85,7 +85,7 @@
  <div class="mainForm">
             <div class="form">
                 
-                <form class="register" hidden action="app/verifications/Register.php" enctype="multipart/form-data" method="POST" class="" name="reg" id="register">
+                <form class="register" hidden action="config/Register.php" enctype="multipart/form-data" method="POST" class="" name="reg" id="register">
                  
 <h3>Sign up here</h3>
                     <div class="input-form">
@@ -104,7 +104,7 @@
                     </div>
 
                     <div class="input-form">
-                        <select name="staff_type" id="acctType">
+                        <select name="staff_type" id="acctType" required>
                             <option value="">Choose account type</option>
                             <option value="student">Student</option>
                             <option value="teacher">Teacher</option>
