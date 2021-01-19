@@ -2,7 +2,7 @@
 //namespace App;
 
 
-require_once "Connect.php";
+require_once "autoload.php";
 
 //use App\Connect;
 

@@ -3,15 +3,17 @@
     "description": "A management system software for students",
     "authors": [
         {
-            "name": "dreysongz",
+            "name": "dreywandowski",
             "email": "aduramimo@gmail.com"
         }
     ],
     "require": {},
     "autoload" : {
     	"psr-4" : {
-    		"App\\" : "config/",
-        "Verify\\" : "app/verifications/"    
+              "Config\\": "config",
+              "Lib\\": "lib",
+              "Interfaces\\": "interfaces",
+              "Traits\\": "traits"
         	}
     },
     "require-dev": {

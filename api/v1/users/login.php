@@ -103,4 +103,3 @@ else{
 
 $login = new Login();
 $login->loginUser();
-?>

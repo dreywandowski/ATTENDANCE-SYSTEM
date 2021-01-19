@@ -1,5 +1,5 @@
 <?php
-//namespace App;
+//namespace Config;
 
 require_once "Connect.php";
 

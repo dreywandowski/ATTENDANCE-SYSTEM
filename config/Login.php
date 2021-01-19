@@ -1,15 +1,12 @@
-<?php 
-//namespace Verify;
+<?php
+//namespace Config;
 // this keeps the user logged in
 if(!isset($_SESSION)) 
     { 
         session_start(); 
-    } 
-
-//use App\Connect;
+    }
 
 require "Connect.php";
-
 
 
 

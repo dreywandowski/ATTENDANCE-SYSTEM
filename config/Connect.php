@@ -1,7 +1,6 @@
 <?php
-//namespace App; 
-
-//require_once "../vendor/autoload.php";
+//namespace Config;
+//require "../vendor/autoload.php";
 
 
 
