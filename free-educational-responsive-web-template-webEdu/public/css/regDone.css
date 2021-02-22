@@ -1,0 +1,22 @@
+div.registration {
+    width: 50%;
+    height: 30vh;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Rubik', sans-serif;
+    margin: 20vh auto;
+}
+
+.reg-note {
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1.2rem;
+}
+
+body{
+
+    background-image: url("../images/success.jpg");
+    background-size: cover;
+}

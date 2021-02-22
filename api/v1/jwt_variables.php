@@ -12,10 +12,4 @@ use \Firebase\JWT\JWT;
 
 // jwt variables
 
-$issuer = "http://localhost/attendance/api/users/login.php";
-$issued_at = time();
-$expiration_time = $issued_at + (60 * 60);  // 10 minutes
-$key =  openssl_random_pseudo_bytes(16);
-
-
 ?>

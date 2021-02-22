@@ -17,26 +17,34 @@ class Register extends Connect{
 // get posted data
 
 public function createUser(){
+	if ($_SERVER['REQUEST_METHOD'] === "POST"){
 	$json = file_get_contents("php://input");
 
     $data = json_decode(file_get_contents("php://input"));
 
-if (!$data) {
+    if (!$data) {
 
-// set the response code to 404
-			http_response_code(404);
+    // set the response code to 404
+	http_response_code(404);
 
-			echo json_encode(array("message" =>"Data missing or invalid"));
+    echo json_encode(array("message" =>"Data missing or invalid"));
 }
 
 
 else{
 	//echo json_encode("It works");
 
+		// get the timestamp
+date_default_timezone_set("Africa/Lagos");
+$date = new DateTime('now');
+$date_r = $date->format("Y-m-d h:i:s");
+
+$currTime = $date_r;
+
     $hash = password_hash($data->password, PASSWORD_DEFAULT);
 
    
-   $query = "INSERT INTO users(first_name, last_name, username, email, password, role, file_path) VALUES('$data->first_name', '$data->last_name', '$data->username', '$data->email', '$hash', '$data->role', '$data->file_path')";
+   $query = "INSERT INTO users(first_name, last_name, username, email, password, role, file_path, reg_time) VALUES('$data->first_name', '$data->last_name', '$data->username', '$data->email', '$hash', '$data->role', '$data->file_path', '$currTime')";
 
 
 mysqli_query($this->conn, $query);
@@ -70,12 +78,22 @@ else{
 			echo json_encode(array("message" => "Error creating the user"));
 	}
 
-//$this->conn->close();
+
 
 }
 
-}
+}	
+	
+
+	else{
+		// set the response code to 503
+			http_response_code(503);
+
+			echo json_encode(array("message" => "Access Denied"));
 	}
+	
+	}
+}
 
 // instatitiate database object and users object
 $register = new Register();

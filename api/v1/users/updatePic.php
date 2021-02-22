@@ -11,10 +11,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 include_once '../connect.php';
 
 // generate JWT tokens
-include_once "php-jwt-master/src/BeforeValidException.php";
-include_once "php-jwt-master/src/ExpiredException.php";
-include_once "php-jwt-master/src/SignatureInvalidException.php";
-include_once "php-jwt-master/src/JWT.php";
+require_once "../jwt_variables.php";
 
 
 use \Firebase\JWT\JWT;
@@ -22,23 +19,23 @@ use \Firebase\JWT\JWT;
 Class Update extends Connect {
 
 
-public function up(){
+public function updatePic(){
   
  // get posted data
   $data = json_decode(file_get_contents("php://input"));
 
   // jwt variables
 
-$issuer = "http://localhost/attendance/api/users/login.php";
+$issuer = "http://localhost/attendance/api/v1/users/login.php";
 $issued_at = time();
-$expiration_time = $issued_at + (60 * 60);  // 10 minutes
-$key =  "427708aeb2911e68a03d67ad26d5f85dc8befe97b9";
+$expiration_time = $issued_at + (60 * 5);  // 10 minutes
+$key =  "Aduramimo_SECRET_API_KEY";
 
 // picture properties
   $file_name = $data->name;
   $file_type = $data->type;
   $file_size = $data->size;
-  //$username = $_SESSION['username'];
+ 
 
 
   // get jwt
@@ -110,7 +107,7 @@ $success = mysqli_query($this->conn, $query);
       if ($success){
         // generate a new jwt immediately after updating user details
         $token = array(
-      "iat" => "http://localhost/attendance/api/users/updatePic.php",
+      "iat" => "http://localhost/attendance/api/users/v1/updatePic.php",
       "exp" => $expiration_time,
       "iss" =>$issuer,
       "data" => array(
@@ -212,6 +209,6 @@ echo json_encode(array(
 // instatitiate database object and users object
 $changePic = new Update();
 //$changePic->validateKey(); 
-$changePic->up();
+$changePic->updatePic();
 
 ?>

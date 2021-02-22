@@ -1,0 +1,458 @@
+body {
+    font-size: 90%;
+    background-image: url("../images/dashboard.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+}
+
+.mainContainer {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: auto auto auto;
+    margin: 0 auto;
+    background: rgba(254,245,245,0.8);
+    width: 90%;
+    min-height: 96vh;
+}
+
+.headerContent {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: deepskyblue;
+    color: white;
+}
+
+.headerContent-II {
+    display: none;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3%;
+    width: 94%;
+}
+
+header div.home {
+    font-size: 1.5rem;
+}
+
+header div.home a {
+    text-decoration: none;
+    color: white;
+}
+
+.header h2 {
+    background: deepskyblue;
+}
+
+.menu {
+    grid-column: 1 / span 2;
+    margin: -5px 0;
+    background-color: rgb(247, 240, 240);
+}
+
+.profile-picture-1 {
+    display: none;
+}
+
+.left-nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.left-nav .user-summary, .left-nav .quickLinks a {
+    padding: 5% 5%;
+}
+
+.left-nav .quickLinks a:hover {
+    background: deepskyblue;
+    color: whitesmoke;
+}
+
+.left-nav .user-summary .profile-picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-nav .user-summary .profile-picture img {
+    width: 80%;
+    border-radius: 50%;
+}
+.left-nav .user-summary .profile-picture img:hover {
+    cursor: pointer;
+}
+
+.left-nav .user-summary .userName {
+    text-align: center;
+}
+
+.left-nav .user-summary .userName .mainUserName {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.left-nav .user-summary .userName .userFooter {
+    font-size: 75%;
+    margin: -10px 0 0 0;
+}
+
+.quickLinks {
+    overflow-x: hidden;
+    /* z-index: 1; */
+}
+
+.quickLinks a {
+    display: block;
+    padding: 7px 10px 7px 5px;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+}
+
+.active {
+    background-color: deepskyblue;
+    color: whitesmoke;
+}
+
+.fa-caret-down {
+    padding-right: 10px;
+}
+
+.midContent, .main {
+    grid-column: 3 / -1;
+    line-height: 3rem;
+    text-align: justify;
+    padding: 5%;
+    
+}
+
+div.searchBar, div.table {
+    width: 98%;
+    margin-bottom: 2%;
+}
+
+.main .searchBar form.search input[type=text] {
+    width: 98%;
+    height: 50px;
+    padding: 0 0 0 2%;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: none;
+}
+
+.main .searchBar form.search input[type=text]:focus {
+    outline: 1px solid deepskyblue;
+}
+
+.main table {
+    width: 100%;
+    height: 60%;
+    background: whitesmoke;
+    line-height: 2.5rem;
+    margin: 0 auto;
+}
+
+.main table tr td {
+    border-top: solid gray 1px;
+}
+
+table tr th.course-code, table tr th.course-units {
+    width: 15%;
+}
+
+.course-units {
+    text-align: right;
+    padding-right: 40%;
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(234, 232, 232);
+}
+
+tr.total {
+    font-weight: bold;
+}
+
+/* payment form styling begins here */
+div.pay {
+    padding-top: 15vh;
+    grid-column: 3 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.pay form {
+    width: 50%;
+    margin-top: -20%;
+}
+
+div.payment-form {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin: 3% auto;
+}
+
+input.inputText {
+    padding: 10px;
+    width: 100%;
+    border-radius: 0;
+    border: solid 1px skyblue;
+    background: whitesmoke;
+}
+
+input.inputText:focus {
+    outline: deepskyblue solid 1px;
+}
+
+.green{
+    height: 40px;
+    width: 50%;
+    background: deepskyblue;
+    color: whitesmoke;
+    outline: none;
+    border: solid deepskyblue 1px;
+    box-shadow: none;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: -20px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+form.payment button {
+    height: 45px;
+    width: 100%;
+    background: deepskyblue;
+    color: whitesmoke;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+form.payment button:hover {
+    background: skyblue;
+}
+
+p.form-footer {
+    font-size: 80%;
+    text-align: center;
+}
+
+.footerContent {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-top: solid 1px black;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .mainContainer {
+        width: 98%;
+    }
+
+    .menu {
+        grid-column: 1 / span 3;
+        background-color: rgb(247, 240, 240);
+        margin: -5px 0;
+        font-size: 90%;
+    }
+
+    .midContent, .main {
+        grid-column: 4 / -1;
+        line-height: 2rem;
+        padding: 5%;
+    }
+
+    div.pay {
+        grid-column: 4 / -1;
+        margin: 0;
+        padding: 0;
+    }
+
+    div.pay form {
+        margin: 0 auto;
+        padding: 0;
+        width: 70%;
+    }
+
+    .headerContent {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    body {
+        background-image: url("../images/dashboard.jpg");
+        background: whitesmoke;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    div.mainContainer {
+        display: block;
+        background: none;
+        width: 99%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    div.headerContent {
+        display: none;
+    }
+
+    div.headerContent-II {
+        display: block;
+        height: 10vh;
+        padding: 0.3rem;
+        background-color: deepskyblue;
+    }
+
+    div.profile-picture-II {
+        float: left;
+    }
+
+    div.profile-picture-II .fa-bars {
+        font-size: 2rem;
+        padding: 1.5rem;
+        color: white;
+    }
+
+    div.profile-picture-II img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    div.dashboard {
+        display: flex;
+        margin-left: 35%;
+        color: white;
+        padding: 1rem;
+    }
+
+    div.dashboard h2 {
+        margin-top: 10%;
+    }
+
+    div.midContent {
+        margin: 0 auto;
+        line-height: 2.5rem;
+        padding: 1%;
+        height: 80vh;
+    }
+
+    div.left-nav {
+        margin-top: 0px;
+        width: 100%;
+        height: 50vh;
+        overflow: scroll;
+        background-color: rgb(97, 176, 203);
+        color: whitesmoke;
+    }
+
+    .user-summary {
+        display: flex;
+        width: auto;
+        margin-top: 1vh;
+    }
+
+    div.left-nav .profile-picture {
+        width: 50%;
+        display: block;
+        height: 20vh;
+        margin: 0;
+    }
+
+    div.left-nav .userName {
+        text-align: center;
+        height: 20vh;
+        padding: 1%;
+        width: 40%;
+        margin-top: 3vh;
+        margin-left: -5vw;
+    }
+
+    div.quickLinks {
+        border-top: 1px solid whitesmoke;
+    }
+
+    div.pay {
+        height: 64vh;
+    }
+
+    div.pay form {
+        width: 75%;
+        margin-top: -25vh;
+    }
+
+    hr.no-display {
+        display: none;
+    }
+
+    /* The menu (background) */
+    .menu {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 10vh; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    /* menu Content */
+    .menu-content {
+        background-color: whitesmoke;
+        margin: 0 auto;
+        padding: 1%;
+        border: 1px solid #888;
+        width: 94%;
+    }
+    
+    /* The Close Button
+    .close {
+        display: block;
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    
+    .close:hover, .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    */
+
+}

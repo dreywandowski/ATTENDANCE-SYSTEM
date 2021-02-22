@@ -13,10 +13,9 @@ require "../connect.php";
 //require "../core.php";
 
 // generate JWT tokens
-include_once "php-jwt-master/src/BeforeValidException.php";
-include_once "php-jwt-master/src/ExpiredException.php";
-include_once "php-jwt-master/src/SignatureInvalidException.php";
-include_once "php-jwt-master/src/JWT.php";
+require_once "../jwt_variables.php";
+
+
 
 
 use \Firebase\JWT\JWT;
@@ -25,9 +24,9 @@ use \Firebase\JWT\JWT;
 
 class Login extends Connect{
 
-	public function loginUser(){
+public function loginUser(){
 
-
+if ($_SERVER['REQUEST_METHOD'] === "POST"){
 
 $data = json_decode(file_get_contents("php://input"));
 
@@ -48,17 +47,31 @@ $count = $result->num_rows;
 if ($count > 0){
 
 	if (password_verify($password, $newPwd)){
+
+		// get the timestamp
+date_default_timezone_set("Africa/Lagos");
+$date = new DateTime('now');
+$date_r = $date->format("Y-m-d h:i:s");
+
+$currTime = $date_r;
+
+    // updates login time
+  $log = "UPDATE users
+    SET login_time = '$currTime'
+    WHERE username = '$username'";
+
+  mysqli_query($this->conn, $log);
+
+
 // jwt variables
-
-$issuer = "http://localhost/attendance/api/users/login.php";
+$issuer = "http://localhost/attendance/api/v1/users/login.php";
 $issued_at = time();
-$expiration_time = $issued_at + (60 * 60);  // 10 minutes
-$key =  "427708aeb2911e68a03d67ad26d5f85dc8befe97b9";  //bin2hex(random_bytes(21));
+$expiration_time = $issued_at + (60 *2);  // 2 minutes
+$key =   "Aduramimo_SECRET_API_KEY";
+$read = date('d/m/y H:i:s', $expiration_time);
 
 
-
-
-		// issue a JWT token upon successful login
+// issue a JWT token upon successful login
 		$token = array(
 			"iat" => $issued_at,
 			"exp" => $expiration_time,
@@ -80,7 +93,8 @@ $jwt = JWT::encode($token, $key);
 
 			echo json_encode(array("message" => "Login successfully", 
 		                            "jwt" => $jwt,
-		                            "key" => $key
+		                            
+		                            "exp" => $read
 		                        ));
 }
 
@@ -97,6 +111,16 @@ else{
 }
 
 }
+
+else{
+	// set the response code to 503
+			http_response_code(503);
+
+			echo json_encode(array("message" => "Access Denied"));
+}
+}
+
+
 
 }
 
