@@ -117,7 +117,7 @@
                         <input type="text" class="user" name="username" placeholder="Preferred Username" required>
                                     
                     </div>
-                    <span id="usercheck"></span>
+                    <span id="usercheck" ></span>
 
 
                     <div class="input-form">
