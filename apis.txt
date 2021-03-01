@@ -1,0 +1,35 @@
+UNIQUE APIs for Student based on their class and interests
+
+==========================================
+https://rapidapi.com/category/Education
+
+Exam API
+https://rapidapi.com/sameerbhatia/api/proprofs-quiz-maker
+
+PAST QUESTIONS
+
+https://rapidapi.com/Seunope/api/nigeria-past-questions2
+
+DICTIONARY API
+https://rapidapi.com/collectapi/api/dictionary35?endpoint=apiendpoint_e97e61bd-f03f-4580-9624-bde837b866a2
+
+PERIODIC TABLE
+https://rapidapi.com/mukundKumar/api/periodictable
+
+WORD FOR TODAY
+https://rapidapi.com/codeheir-codeheir-default/api/wordoftheday2
+
+QUOTE FOR THE DAY
+https://rapidapi.com/sahil.qaiser/api/quotes21
+
+RANDOM WORDS
+https://rapidapi.com/mcnaveen/api/random-words-with-pronunciation
+
+RANDOM NUMBERS
+https://rapidapi.com/divad12/api/numbers-1
+
+SEND SMS
+https://rapidapi.com/inteltech/api/inteltech-sms
+
+LIVESCORES
+https://rapidapi.com/apidojo/api/livescore6
