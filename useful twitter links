@@ -3,3 +3,5 @@ Autoload ==> https://twitter.com/dreywandowski/status/1346514361725186049
 
 https://sweetalert2.github.io/
 
+
+Subquery: "SELECT staffid,title,surname,othnames,gender,mstatus,DATE_FORMAT(dofbirth,'%d/%m/%Y') as dofbirth,branch, nrank,nrank,DATE_FORMAT(dofemp,'%d/%m/%Y') as dofemp,DATE_FORMAT(confdate,'%d/%m/%Y') as confdate,emptype, dept,sstatus,superv,dept,sstate, (SELECT CONCAT(saddr1,' ', saddr2,' ', saddr3) as address from hmrs_contact where staffid ='$this->userid' ) as contact,(SELECT semail from hmrs_contact where staffid ='$this->userid') as emails, (SELECT conemail from hmrs_contact where staffid ='$this->userid') as cemails, (SELECT sgsm from hmrs_contact where staffid = '$this->userid') as gsm, (SELECT fname from hmrs_uploads where (staffid = '$this->userid')  and (docclass ='PHO')) as fname FROM `hmrs_persdet` where staffid = '$this->userid' ";
