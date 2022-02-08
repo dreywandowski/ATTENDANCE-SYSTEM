@@ -5,5 +5,5 @@
 ### Accept payments, upload course material, take/grade exams, etc.
 ### Its a full package! Check it out and make use of it.
 
-### Live link => https://dreywandowski.xyz/ATTENDANCE/ATTENDANCE/
+### Live link => http://adura-projects.tk
 
