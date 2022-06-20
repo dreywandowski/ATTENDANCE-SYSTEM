@@ -1,0 +1,145 @@
+body{
+
+background-image:url("/img/student-writing-to-notebook-exam-lecture-education-high-school-university-learning-people-concept-79161121.jpg");
+background-repeat: no-repeat;
+background-size:cover;
+
+font-family: 'Raleway', sans-serif;
+
+font-size: 18px;
+
+}
+
+
+form{
+
+	background-color: snow;
+
+	border: solid;
+
+	border-radius: 20px;
+
+	width: 29%;
+
+	height: 20%;
+
+	padding: 1%;
+
+	margin-left: 30%;
+	margin-top: 10%;
+
+}
+
+
+.hidden{
+
+	display: none;
+
+}
+
+.shown{
+
+	display: block;
+
+}
+
+
+
+
+
+.prev{
+
+	background-image: url("back.png");
+
+	background-repeat: no-repeat;
+
+	background-position: 10px 10px;
+
+	padding-left: 80px;
+
+	padding-bottom: 45px;
+
+}
+
+.next{
+
+	background-image: url("next-1.png");
+
+	background-repeat: no-repeat;
+
+	background-position: 10px 10px;
+
+	padding-left: 100px;
+
+	padding-bottom: 50px;
+
+}
+
+
+
+input[type=button]{
+
+background-color: #4CAF50;
+
+border-width: 3px;
+
+border-radius: 15px;
+
+color: black;
+
+padding: 16px 32px;
+
+text-decoration: none;
+
+margin: 4px 2px;
+
+cursor: default;
+
+}
+
+
+
+input[type=text], input[type=password] {
+
+	box-sizing: border-box;
+
+	width: 180px;
+
+	border-width: 2px;
+
+}
+
+
+
+button:active{
+
+	background-color: orange;
+
+}
+
+
+
+button:hover{
+
+	background-color: red;
+
+}
+
+
+
+#final{
+
+float: right;
+
+border: solid;
+
+border-radius: 20px;
+
+width: 90px;
+
+height: 60px;
+
+}
+
+
+

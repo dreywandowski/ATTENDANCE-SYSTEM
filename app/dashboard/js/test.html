@@ -1,0 +1,38 @@
+<!doctype html>
+<head>
+	<title> Exam </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+<body>
+
+<script type="text/javascript">
+
+
+function test (x) {
+	//if (x > 5)
+	//{
+		var z = [];
+		for (i=0; i<=x; i++){	
+	   z.push(i);
+		}
+
+		let b = z.filter((element, index) =>{
+		return index % 6 === 0;	
+		});
+		console.log("List of every sixth number between 0 and " + x + " " + "is " + b);
+			
+//}
+	
+
+}
+test(273);
+</script>
+</body>
+</html>
+<!--
+for (i=0; i<=x; i++){
+			if (x%5 = 0){
+				alert("d");
+
+			}-->

@@ -1,0 +1,50 @@
+body{
+	text-align: center;
+	font-weight: bolder;
+	font-family: 'Raleway', sans-serif;
+	background: url('../images/write.jpg');
+	background-size:cover;
+	background-repeat: no-repeat;
+}
+#nav{
+	width: 1200px;
+	height: 200px;
+
+	background-size:cover;
+}
+
+#nav_wrapper{
+	width: 1000px;
+	height: 100px ;
+	background-color: transparent;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	
+}
+#nav_wrapper ul li{
+	list-style: none;
+	display: inline;
+	padding: 10px;
+	font-weight: bold;
+}
+#nav_wrapper a,{
+	color: white;
+	text-decoration: none;
+	margin-top: 20px;
+	padding: 10px;
+}
+#nav_wrapper a:hover{
+	color: white;
+	transition: 0.4s;
+}
+
+b{
+	text-decoration: underline;
+	font-size: 20px;
+}
+
+#update{
+float: left;
+height: 30px;
+}
