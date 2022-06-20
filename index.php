@@ -58,7 +58,7 @@
         <!--/.bg-holder-->
 
 
-          <p> Testing GIT Deploy</p>
+          <p> Testing GIT Deploy, from my local PC</p>
 
 
         <div class="container position-relative">
